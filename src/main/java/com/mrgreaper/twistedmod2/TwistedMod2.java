@@ -2,6 +2,8 @@ package com.mrgreaper.twistedmod2;
 
 import com.mrgreaper.twistedmod2.blocks.BlockInfo;
 import com.mrgreaper.twistedmod2.handlers.Drops;
+import com.mrgreaper.twistedmod2.handlers.Recipies;
+import com.mrgreaper.twistedmod2.handlers.Smelting;
 import com.mrgreaper.twistedmod2.items.ItemInfo;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -10,7 +12,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -33,17 +34,20 @@ public class TwistedMod2 {
         TwistedModTab = new CreativeTabs("TwistedMod2") {
             @SideOnly(Side.CLIENT)
             public Item getTabIconItem() {
-                return Items.arrow;
+                return ItemInfo.itemDeadBunny;
             }
         };
         ItemInfo.init();//to make things neater lets use an info class
         BlockInfo.init();
+        Recipies.init();
 
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new Drops());//register our drop handler example
+        Smelting.init();
+
 
     }
 

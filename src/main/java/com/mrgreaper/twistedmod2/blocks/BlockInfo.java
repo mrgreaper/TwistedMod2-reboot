@@ -12,6 +12,7 @@ public class BlockInfo {
 
     public static Block blockSpeaker;
     public static Block oreBunnyite;
+    public static Block blockBunnyite;
 
 
     public static void init(){
@@ -19,6 +20,8 @@ public class BlockInfo {
         GameRegistry.registerBlock(blockSpeaker,"Speaker");
         oreBunnyite = new oreBunnyite(Material.rock).setBlockName("oreBunnyite");
         GameRegistry.registerBlock(oreBunnyite,"oreBunnyite");
+        blockBunnyite = new blockBunnyite(Material.iron).setBlockName("blockBunnyite");
+        GameRegistry.registerBlock(blockBunnyite,"blockBunnyite");
 
 
     }
