@@ -1,0 +1,18 @@
+[
+{
+  "modid" : "twistedmod2",
+  "name" : "Mr G Reapers twisted mod 2",
+  "version" : "1.0",
+  "credits" :"A big thanks to the wonderful people that provide us with tutorials and guides to help us learn",
+  "authors": [
+    "Mr G Reaper AKA mrgreaper"
+  ],
+  "description": "a twisted mod with stuff that i wanted to add to the game enjoy and try not to be offended! (this is Dark humour)",
+  "url" : " none yet",
+  "updateUrl" : "",
+  "logoFile" : "",
+  "parent" : "",
+  "screenshots": [
+  ]
+}
+]

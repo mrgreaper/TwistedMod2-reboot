@@ -24,5 +24,6 @@ public class BlockInfo {
         GameRegistry.registerBlock(blockBunnyite,"blockBunnyite");
 
 
+
     }
 }

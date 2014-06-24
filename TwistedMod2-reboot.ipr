@@ -169,6 +169,13 @@
       </item>
     </group>
   </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="david">
+      <words>
+        <w>bunnyite</w>
+      </words>
+    </dictionary>
+  </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TwistedMod2-reboot.iml" filepath="$PROJECT_DIR$/TwistedMod2-reboot.iml" />
