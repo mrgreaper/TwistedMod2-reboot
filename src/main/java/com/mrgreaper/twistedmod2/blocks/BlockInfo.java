@@ -13,15 +13,19 @@ public class BlockInfo {
     public static Block blockSpeaker;
     public static Block oreBunnyite;
     public static Block blockBunnyite;
+    public static Block oreCystalizedBlood;
 
 
     public static void init(){
         blockSpeaker = new blockSpeaker(Material.iron).setBlockName("Speaker");
         GameRegistry.registerBlock(blockSpeaker,"Speaker");
-        oreBunnyite = new oreBunnyite(Material.rock).setBlockName("oreBunnyite");
+        oreBunnyite = new oreBlock(Material.rock).setBlockName("oreBunnyite");
         GameRegistry.registerBlock(oreBunnyite,"oreBunnyite");
         blockBunnyite = new blockBunnyite(Material.iron).setBlockName("blockBunnyite");
         GameRegistry.registerBlock(blockBunnyite,"blockBunnyite");
+        oreCystalizedBlood = new oreBlock(Material.rock).setBlockName("oreCystalizedBlood");
+        GameRegistry.registerBlock(oreCystalizedBlood,"oreCystalizedBlood");
+
 
 
 

@@ -1,7 +1,6 @@
 package com.mrgreaper.twistedmod2.handlers;
 
 import com.mrgreaper.twistedmod2.blocks.BlockInfo;
-import com.mrgreaper.twistedmod2.blocks.oreBunnyite;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
 import com.mrgreaper.twistedmod2.items.ItemInfo;

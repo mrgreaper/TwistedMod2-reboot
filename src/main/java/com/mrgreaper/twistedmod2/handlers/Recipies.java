@@ -37,10 +37,10 @@ public class Recipies {
         GameRegistry.addRecipe(new ItemStack(ItemInfo.itemBunnyiteWasher,4),new Object[]{"IH", 'H',ItemInfo.itemBunnyitePlate, 'I',new ItemStack(ItemInfo.itemBunnyitePunch, 1, OreDictionary.WILDCARD_VALUE)});
 
         //test shapeless recipie bellow
-        //GameRegistry.addShapelessRecipe(new ItemStack(BlockInfo.oreBunnyite),new Object[]{ItemInfo.itemBunnyiteIngot, Blocks.cobblestone});
-        GameRegistry.addShapelessRecipe(new ItemStack(ItemInfo.itemBunnyiteIngot,9),new Object[]{BlockInfo.blockBunnyite});
+//GameRegistry.addShapelessRecipe(new ItemStack(BlockInfo.oreBunnyite),new Object[]{ItemInfo.itemBunnyiteIngot, Blocks.cobblestone});
+GameRegistry.addShapelessRecipe(new ItemStack(ItemInfo.itemBunnyiteIngot,9),new Object[]{BlockInfo.blockBunnyite});
 
 
 
-    }
-}
+        }
+        }

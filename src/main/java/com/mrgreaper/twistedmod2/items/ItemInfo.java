@@ -25,6 +25,7 @@ public class ItemInfo {
     public static Item itemBunnyitePickaxe;
     public static Item itemBunnyiteAxe;
     public static Item itemBunnyiteSpade;
+    public static Item itemBloodCrystal;
 
 
     public static void init(){
@@ -61,6 +62,8 @@ public class ItemInfo {
         GameRegistry.registerItem(itemBunnyiteAxe,"BunnyiteAxe");
         itemBunnyiteSpade = new itemBunnyiteSpade(TwistedMod2.BunnyiteMaterial).setUnlocalizedName("BunnyiteSpade");
         GameRegistry.registerItem(itemBunnyiteSpade,"BunnyiteSpade");
+        itemBloodCrystal = new twistedItems().setUnlocalizedName("TwistedBloodCrystal");
+        GameRegistry.registerItem(itemBloodCrystal,"TwistedBloodCrystal");
 
 
     }
