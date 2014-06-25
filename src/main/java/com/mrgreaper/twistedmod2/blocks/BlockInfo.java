@@ -1,5 +1,6 @@
 package com.mrgreaper.twistedmod2.blocks;
 
+import com.mrgreaper.twistedmod2.TwistedMod2;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -14,20 +15,24 @@ public class BlockInfo {
     public static Block oreBunnyite;
     public static Block blockBunnyite;
     public static Block oreCystalizedBlood;
+    public static Block blockBunnyFurnaceIdle;
+    public static Block blockBunnyFurnaceActive;
 
 
     public static void init(){
         blockSpeaker = new blockSpeaker(Material.iron).setBlockName("Speaker");
-        GameRegistry.registerBlock(blockSpeaker,"Speaker");
         oreBunnyite = new oreBlock(Material.rock).setBlockName("oreBunnyite");
-        GameRegistry.registerBlock(oreBunnyite,"oreBunnyite");
         blockBunnyite = new blockBunnyite(Material.iron).setBlockName("blockBunnyite");
-        GameRegistry.registerBlock(blockBunnyite,"blockBunnyite");
         oreCystalizedBlood = new oreBlock(Material.rock).setBlockName("oreCystalizedBlood");
+        blockBunnyFurnaceIdle = new blockBunnyFurnace(false,Material.iron).setBlockName("BunnyFurnaceIdle").setCreativeTab(TwistedMod2.TwistedModTab);
+        blockBunnyFurnaceActive = new blockBunnyFurnace(false,Material.iron).setBlockName("BunnyFurnaceActive").setCreativeTab(TwistedMod2.TwistedModTab);
+
+        GameRegistry.registerBlock(blockSpeaker,"Speaker");
+        GameRegistry.registerBlock(oreBunnyite,"oreBunnyite");
+        GameRegistry.registerBlock(blockBunnyite,"blockBunnyite");
         GameRegistry.registerBlock(oreCystalizedBlood,"oreCystalizedBlood");
-
-
-
+        GameRegistry.registerBlock(blockBunnyFurnaceIdle, "BunnyFurnaceIdle");
+        GameRegistry.registerBlock(blockBunnyFurnaceActive, "BunnyFurnaceActive");
 
     }
 }
