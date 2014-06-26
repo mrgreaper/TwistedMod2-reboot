@@ -1,6 +1,7 @@
 package com.mrgreaper.twistedmod2;
 
 import com.mrgreaper.twistedmod2.blocks.BlockInfo;
+import com.mrgreaper.twistedmod2.entitys.EntityInfo;
 import com.mrgreaper.twistedmod2.handlers.*;
 import com.mrgreaper.twistedmod2.items.ItemInfo;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -8,6 +9,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -22,8 +24,8 @@ import net.minecraftforge.common.util.EnumHelper;
 @Mod(modid="twistedmod2",name = "Mr G Reapers Twisted Mod 2",version="1.7.2.1.0")
 
 public class TwistedMod2 {
-    public static String MODID = "twistedmod2";
-    public static String VERSION= "1.7.2.1.0";
+    public static final String MODID = "twistedmod2";
+    public static final String VERSION= "1.7.2.1.0";
 
     TwistedWorldGen eventWorldGen = new TwistedWorldGen();
 
@@ -32,7 +34,7 @@ public class TwistedMod2 {
     public static Item.ToolMaterial BunnyiteMaterial = EnumHelper.addToolMaterial("Bunnyite",3,1750,14.0f,5.0f,10);
     // public static Item.ToolMaterial NAME = EnumHelper.addToolMaterial(name,havestlevel,maxuses,efficiency,damage,enchantability)
 
-    @Mod.Instance("TwistedMod2")
+    @Mod.Instance(MODID)
     public static TwistedMod2 instance;
 
     @Mod.EventHandler
@@ -54,8 +56,10 @@ public class TwistedMod2 {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         FMLCommonHandler.instance().bus().register(new CraftingHandler()); //for our durable items
+        NetworkRegistry.INSTANCE.registerGuiHandler(this,new GuiHandler());
         MinecraftForge.EVENT_BUS.register(new Drops());//register our drop handler example
         Smelting.init();
+        EntityInfo.init();
 
         GameRegistry.registerFuelHandler(new TwistedFuel());
 

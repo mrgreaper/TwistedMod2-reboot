@@ -22,7 +22,7 @@ group= "com.mrgreaper.twistedmod2" // http://maven.apache.org/guides/mini/guide-
 archivesBaseName = "TwistedMod2"
 
 minecraft {
-    version = "1.7.2-10.12.2.1126"
+    version = "1.7.2-10.12.2.1147"
     assetDir = "eclipse/assets"
 }
 

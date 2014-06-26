@@ -1,6 +1,8 @@
 package com.mrgreaper.twistedmod2.blocks;
 
 import com.mrgreaper.twistedmod2.TwistedMod2;
+import com.mrgreaper.twistedmod2.entitys.TileEntityBunnyFurnace;
+import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -8,6 +10,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -44,7 +47,7 @@ public class blockBunnyFurnace extends BlockContainer {
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int metadata) {
        // return metadata ==0 && side == 3 ? this.IconFront : (side ==metadata ? this.IconFront : this.blockIcon );
-       return side == 3? this.IconFront : side ==1 ? this.IconTop :(side ==0 ? this.IconTop : (side !=metadata ? this.blockIcon: this.IconTop));
+       return side == 1? this.IconTop :( side ==0 ? this.IconTop :(side !=metadata ? this.blockIcon: this.IconFront));
     //side 3 is the front 1 is top 0 is the bottom
     }
     
@@ -69,7 +72,7 @@ public class blockBunnyFurnace extends BlockContainer {
             if (b1.func_149730_j() && !b2.func_149730_j()){
                 b0=3;
             }
-            if (b2.func_149730_j() && !b3.func_149730_j()){
+            if (b2.func_149730_j() && !b1.func_149730_j()){
                 b0=2;
             }
             if (b3.func_149730_j() && !b4.func_149730_j()){
@@ -79,34 +82,39 @@ public class blockBunnyFurnace extends BlockContainer {
             if (b4.func_149730_j() && !b3.func_149730_j()){
                 b0=4;
             }
-            world.setBlockMetadataWithNotify(x,y,z,b0,2);
+            world.setBlockMetadataWithNotify(x,y,x,b0,2);
         }
     }
-    //TODO onblockActiated
+    public boolean onBlockActivated(World world,int x,int y,int z, EntityPlayer player,int side,float hitX,float hitY,float hitZ){
+        if (!world.isRemote){
+            FMLNetworkHandler.openGui(player,TwistedMod2.instance,BlockInfo.guiIDBunnyFurnace,world,x,y,z);
+        }
+        return true;
+    }
 
     @Override
-    public TileEntity createNewTileEntity(World var1, int var2) {
-        return null;
+    public TileEntity createNewTileEntity(World world,int i) {
+        return new TileEntityBunnyFurnace();
     }
 
     //TODO randomDisplayTick
 
     public void onBlockPlacedBy(World world,int x,int y,int z,EntityLivingBase entityplayer,ItemStack itemstack) {
-        int I = MathHelper.floor_double((double)(entityplayer.rotationYaw * 4.0f / 360.f)+ 0.50) & 3;
+        int I = MathHelper.floor_double((double)(entityplayer.rotationYaw * 4.0f / 360.f)+ 0.5D) & 3;
 
         if (I == 0){
             world.setBlockMetadataWithNotify(x,y,z,2,2);
         }
-        if (I == 3){
+        if (I == 1){
             world.setBlockMetadataWithNotify(x,y,z,5,2);
         }
         if (I == 2){
             world.setBlockMetadataWithNotify(x,y,z,3,2);
         }
-        if (I == 0){
+        if (I == 3){
             world.setBlockMetadataWithNotify(x,y,z,4,2);
         }
-            //TODO 	if(itemstack.hasDisplayName()) {((TileEntityBunnyFurnace)world.getTileEntity(x, y, z)).setGuiDisplayName(itemstack.getDisplayName());
+            ((TileEntityBunnyFurnace)world.getTileEntity(x, y, z)).setGuiDisplayName(itemstack.getDisplayName());
 
     }
     

@@ -17,6 +17,7 @@ public class BlockInfo {
     public static Block oreCystalizedBlood;
     public static Block blockBunnyFurnaceIdle;
     public static Block blockBunnyFurnaceActive;
+    public static final int guiIDBunnyFurnace=0;
 
 
     public static void init(){
