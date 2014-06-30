@@ -1,6 +1,7 @@
 package com.mrgreaper.twistedmod2.items;
 
 import com.mrgreaper.twistedmod2.TwistedMod2;
+import com.mrgreaper.twistedmod2.handlers.materials;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
@@ -38,14 +39,14 @@ public class ItemInfo {
         itemDeathOrb = new twistedItems().setUnlocalizedName("DeathOrb");
         itemOrphanLeg = new twistedItems().setUnlocalizedName("OrphanLeg");
         itemBunnySwordHilt = new twistedItems().setUnlocalizedName("BunnySwordHilt");
-        itemBunnySword = new itemBunnySword(TwistedMod2.BunnyiteMaterial).setUnlocalizedName("BunnySword");
+        itemBunnySword = new itemBunnySword(materials.BunnyiteMaterial).setUnlocalizedName("BunnySword");
         itemEnergizedBunny = new twistedItems().setUnlocalizedName("EnergizedBunny");
         itemTwistedHammer = new itemTwistedHammer().setUnlocalizedName("TwistedHammer");
         itemBunnyitePunch = new itemBunnyitePunch().setUnlocalizedName("BunnyitePunch");
         itemBunnyitePlate = new twistedItems().setUnlocalizedName("BunnyitePlate");
-        itemBunnyitePickaxe = new itemBunnyitePickaxe(TwistedMod2.BunnyiteMaterial).setUnlocalizedName("BunnyitePickaxe");
-        itemBunnyiteAxe = new itemBunnyiteAxe(TwistedMod2.BunnyiteMaterial).setUnlocalizedName("BunnyiteAxe");
-        itemBunnyiteSpade = new itemBunnyiteSpade(TwistedMod2.BunnyiteMaterial).setUnlocalizedName("BunnyiteSpade");
+        itemBunnyitePickaxe = new itemBunnyitePickaxe(materials.BunnyiteMaterial).setUnlocalizedName("BunnyitePickaxe");
+        itemBunnyiteAxe = new itemBunnyiteAxe(materials.BunnyiteMaterial).setUnlocalizedName("BunnyiteAxe");
+        itemBunnyiteSpade = new itemBunnyiteSpade(materials.BunnyiteMaterial).setUnlocalizedName("BunnyiteSpade");
         itemBloodCrystal = new twistedItems().setUnlocalizedName("TwistedBloodCrystal");
 
         GameRegistry.registerItem(itemDeadBunny,"deadBunny");

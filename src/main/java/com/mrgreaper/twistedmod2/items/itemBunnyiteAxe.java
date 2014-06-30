@@ -1,6 +1,7 @@
 package com.mrgreaper.twistedmod2.items;
 
 import com.mrgreaper.twistedmod2.TwistedMod2;
+import com.mrgreaper.twistedmod2.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -17,6 +18,6 @@ public class itemBunnyiteAxe extends ItemAxe {
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister){
-        this.itemIcon = iconRegister.registerIcon(TwistedMod2.MODID+":"+this.getUnlocalizedName().substring(5));
+        this.itemIcon = iconRegister.registerIcon(Reference.MODID+":"+this.getUnlocalizedName().substring(5));
     }
 }

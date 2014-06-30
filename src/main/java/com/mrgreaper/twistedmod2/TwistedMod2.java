@@ -1,9 +1,11 @@
 package com.mrgreaper.twistedmod2;
 
+import com.mrgreaper.twistedmod2.reference.Recipies;
 import com.mrgreaper.twistedmod2.blocks.BlockInfo;
 import com.mrgreaper.twistedmod2.entitys.EntityInfo;
 import com.mrgreaper.twistedmod2.handlers.*;
 import com.mrgreaper.twistedmod2.items.ItemInfo;
+import com.mrgreaper.twistedmod2.reference.Reference;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -24,22 +26,21 @@ import net.minecraftforge.common.util.EnumHelper;
 @Mod(modid="twistedmod2",name = "Mr G Reapers Twisted Mod 2",version="1.7.2.1.0")
 
 public class TwistedMod2 {
-    public static final String MODID = "twistedmod2";
-    public static final String VERSION= "1.7.2.1.0";
+
 
     TwistedWorldGen eventWorldGen = new TwistedWorldGen();
 
     public static CreativeTabs TwistedModTab;
 
-    public static Item.ToolMaterial BunnyiteMaterial = EnumHelper.addToolMaterial("Bunnyite",3,1750,14.0f,5.0f,10);
+    //materials moved to materials in handlers
     // public static Item.ToolMaterial NAME = EnumHelper.addToolMaterial(name,havestlevel,maxuses,efficiency,damage,enchantability)
 
-    @Mod.Instance(MODID)
+    @Mod.Instance(Reference.MODID)
     public static TwistedMod2 instance;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
-        TwistedModTab = new CreativeTabs("TwistedMod2") {
+        TwistedModTab = new CreativeTabs(Reference.MOD_NAME) {
             @SideOnly(Side.CLIENT)
             public Item getTabIconItem() {
                 return ItemInfo.itemDeadBunny;
@@ -48,8 +49,8 @@ public class TwistedMod2 {
         ItemInfo.init();//to make things neater lets use an info class
         BlockInfo.init();
         Recipies.init();
-
         GameRegistry.registerWorldGenerator(eventWorldGen,0);
+        ConfigHandler.init(event.getSuggestedConfigurationFile());
 
     }
 

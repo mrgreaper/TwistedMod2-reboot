@@ -2,6 +2,7 @@ package com.mrgreaper.twistedmod2.blocks;
 
 import com.mrgreaper.twistedmod2.TwistedMod2;
 import com.mrgreaper.twistedmod2.entitys.TileEntityBunnyFurnace;
+import com.mrgreaper.twistedmod2.reference.Reference;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -38,9 +39,9 @@ public class blockBunnyFurnace extends BlockContainer {
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon(TwistedMod2.MODID+":"+"BunnyFurnace_side");
-        this.IconFront = iconRegister.registerIcon(TwistedMod2.MODID+":"+(this.isActive ? "BunnyFurnace_front_on" : "BunnyFurnace_front_off"));
-        this.IconTop = iconRegister.registerIcon(TwistedMod2.MODID+":"+"BunnyFurnace_top");
+        this.blockIcon = iconRegister.registerIcon(Reference.MODID+":"+"BunnyFurnace_side");
+        this.IconFront = iconRegister.registerIcon(Reference.MODID+":"+(this.isActive ? "BunnyFurnace_front_on" : "BunnyFurnace_front_off"));
+        this.IconTop = iconRegister.registerIcon(Reference.MODID+":"+"BunnyFurnace_top");
 
     }
 
