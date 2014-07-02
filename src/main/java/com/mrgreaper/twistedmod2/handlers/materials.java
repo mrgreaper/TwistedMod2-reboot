@@ -8,7 +8,10 @@ import net.minecraftforge.common.util.EnumHelper;
  */
 public class materials {
 
-        public static Item.ToolMaterial BunnyiteMaterial = EnumHelper.addToolMaterial("Bunnyite", 3, 1750, 14.0f, 5.0f, 10);
+    // public static Item.ToolMaterial NAME = EnumHelper.addToolMaterial(name,havestlevel,maxuses,efficiency,damage,enchantability)
+
+    public static Item.ToolMaterial BunnyiteMaterial = EnumHelper.addToolMaterial("Bunnyite", 3, 1750, 14.0f, 5.0f, 10);
+
     public static void init() {
 
     }

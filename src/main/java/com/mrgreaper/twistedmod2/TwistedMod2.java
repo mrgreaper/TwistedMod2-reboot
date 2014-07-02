@@ -1,13 +1,16 @@
 package com.mrgreaper.twistedmod2;
 
+import com.mrgreaper.twistedmod2.proxy.IProxy;
 import com.mrgreaper.twistedmod2.reference.Recipies;
 import com.mrgreaper.twistedmod2.blocks.BlockInfo;
 import com.mrgreaper.twistedmod2.entitys.EntityInfo;
 import com.mrgreaper.twistedmod2.handlers.*;
 import com.mrgreaper.twistedmod2.items.ItemInfo;
 import com.mrgreaper.twistedmod2.reference.Reference;
+import com.mrgreaper.twistedmod2.utility.LogHelper;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -23,7 +26,7 @@ import net.minecraftforge.common.util.EnumHelper;
 /**
  * Created by david on 19/06/2014.
  */
-@Mod(modid="twistedmod2",name = "Mr G Reapers Twisted Mod 2",version="1.7.2.1.0")
+@Mod(modid=Reference.MODID,name = Reference.MOD_NAME,version=Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 
 public class TwistedMod2 {
 
@@ -33,10 +36,13 @@ public class TwistedMod2 {
     public static CreativeTabs TwistedModTab;
 
     //materials moved to materials in handlers
-    // public static Item.ToolMaterial NAME = EnumHelper.addToolMaterial(name,havestlevel,maxuses,efficiency,damage,enchantability)
+
 
     @Mod.Instance(Reference.MODID)
     public static TwistedMod2 instance;
+
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS,serverSide = Reference.SERVER_PROXY_CLASS)
+    public static IProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
@@ -52,6 +58,8 @@ public class TwistedMod2 {
         GameRegistry.registerWorldGenerator(eventWorldGen,0);
         ConfigHandler.init(event.getSuggestedConfigurationFile());
 
+
+        LogHelper.info("pre initialisation complete!");
     }
 
     @Mod.EventHandler
@@ -65,11 +73,13 @@ public class TwistedMod2 {
         GameRegistry.registerFuelHandler(new TwistedFuel());
 
 
+        LogHelper.info("initialisation complete!");
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 
+        LogHelper.info("post initialisation complete!");
     }
 
 

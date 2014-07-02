@@ -1,5 +1,8 @@
 package com.mrgreaper.twistedmod2.handlers;
 
+import com.mrgreaper.twistedmod2.reference.Reference;
+import cpw.mods.fml.client.event.ConfigChangedEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;
 
 import java.io.File;
@@ -9,23 +12,27 @@ import java.io.File;
  */
 public class ConfigHandler {
 
+    public static Configuration configuration;
+    public static boolean testValue = false;
+
     public static void init(File configFile){
-        Configuration configuration = new Configuration(configFile);
-
-        try{
-            //load config
-            configuration.load();
-            //read propertys
-            boolean configValue = configuration.get(Configuration.CATEGORY_GENERAL, "test Value", true,"an example comment").getBoolean(true);
-
+        if(configuration==null) {
+            configuration = new Configuration(configFile);
         }
-        //catch errors
-        catch (Exception e)
-        {}
-        finally { //finally runs at the end of a try catch no matter what
-            //save configuration
+    }
+
+    @SubscribeEvent
+    public void onConfigurationChangeEvent(ConfigChangedEvent.OnConfigChangedEvent event){
+        if (event.modID.equalsIgnoreCase(Reference.MODID)){
+            loadConfiguration();
+        }
+    }
+
+
+    public void loadConfiguration(){
+        testValue = configuration.getBoolean("configValue",configuration.CATEGORY_GENERAL,false,"an example config value");
+        if (configuration.hasChanged()){
             configuration.save();
-            System.out.println("TwistMod saved config (it may not of changed :) )");
         }
     }
 }
