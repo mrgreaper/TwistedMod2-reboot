@@ -14,6 +14,8 @@ public class ConfigHandler {
 
     public static Configuration configuration;
     public static boolean testValue = false;
+    public static int deadBunnyBurnTime =800;
+    public static int livingBunnyBurnTime = 3200;
 
     public static void init(File configFile){
         if(configuration==null) {
@@ -31,6 +33,9 @@ public class ConfigHandler {
 
     public void loadConfiguration(){
         testValue = configuration.getBoolean("configValue",configuration.CATEGORY_GENERAL,false,"an example config value");
+        deadBunnyBurnTime = configuration.getInt("deadBunnyBurn",configuration.CATEGORY_GENERAL,deadBunnyBurnTime,1,9000,"The burn time of a dead bunny between 1 and 9000");
+        livingBunnyBurnTime = configuration.getInt("livingBunnyBurn",configuration.CATEGORY_GENERAL,livingBunnyBurnTime,1,9000,"The burn time of a living bunny between 1 and 9000");
+
         if (configuration.hasChanged()){
             configuration.save();
         }

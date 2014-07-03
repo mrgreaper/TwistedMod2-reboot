@@ -15,4 +15,7 @@ public class TwistedFuel implements IFuelHandler{
         if (fuel.getItem()== ItemInfo.itemDeadBunny) return 800;
         return 0;
     }
+
+
+
 }

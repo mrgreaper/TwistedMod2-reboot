@@ -57,6 +57,7 @@ public class TwistedMod2 {
         Recipies.init();
         GameRegistry.registerWorldGenerator(eventWorldGen,0);
         ConfigHandler.init(event.getSuggestedConfigurationFile());
+        
 
 
         LogHelper.info("pre initialisation complete!");
