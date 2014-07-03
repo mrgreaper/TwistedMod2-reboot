@@ -1,7 +1,4 @@
 .gradle/
 eclipse/
-gradle/
 build/
 out/
-gradlew
-gradlew.bat
