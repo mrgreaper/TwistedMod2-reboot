@@ -12,7 +12,7 @@ import java.util.Random;
 /**
  * Created by david on 22/06/2014.
  */
-public class Drops {
+public class DropsHandler {
     //example drop handler
 
     public static Random random;

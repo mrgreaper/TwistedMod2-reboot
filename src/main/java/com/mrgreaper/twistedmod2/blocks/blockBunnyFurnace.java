@@ -29,6 +29,8 @@ public class blockBunnyFurnace extends BlockContainer {
     @SideOnly(Side.CLIENT)
     private IIcon IconFront;
 
+    private static boolean keepInventory;
+
     @SideOnly(Side.CLIENT)
     private IIcon IconTop;
 
@@ -117,6 +119,25 @@ public class blockBunnyFurnace extends BlockContainer {
         }
             ((TileEntityBunnyFurnace)world.getTileEntity(x, y, z)).setGuiDisplayName(itemstack.getDisplayName());
 
+    }
+
+    public static void updateblockBunnyFurnaceState(boolean active, World worldObj, int xCoord, int yCoord, int zCoord) {
+        int i = worldObj.getBlockMetadata(xCoord, yCoord, zCoord);
+        TileEntity tileentity = worldObj.getTileEntity(xCoord, yCoord, zCoord);
+        keepInventory = true;
+        if (active) {
+            worldObj.setBlock(xCoord, yCoord, zCoord, BlockInfo.blockBunnyFurnaceActive);
+        } else {
+            worldObj.setBlock(xCoord, yCoord, zCoord, BlockInfo.blockBunnyFurnaceIdle);
+        }
+
+        keepInventory = false;
+
+        worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, i, 2);
+        if (tileentity != null) {
+            tileentity.validate();
+            worldObj.setTileEntity(xCoord, yCoord, zCoord, tileentity);
+        }
     }
     
     

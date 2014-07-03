@@ -21,7 +21,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.util.EnumHelper;
 
 /**
  * Created by david on 19/06/2014.
@@ -55,7 +54,7 @@ public class TwistedMod2 {
         ItemInfo.init();//to make things neater lets use an info class
         BlockInfo.init();
         Recipies.init();
-        GameRegistry.registerWorldGenerator(eventWorldGen,0);
+        GameRegistry.registerWorldGenerator(eventWorldGen, 0);
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         
 
@@ -66,8 +65,9 @@ public class TwistedMod2 {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         FMLCommonHandler.instance().bus().register(new CraftingHandler()); //for our durable items
+        FMLCommonHandler.instance().bus().register(new EventHandler());// out misc event handler class
         NetworkRegistry.INSTANCE.registerGuiHandler(this,new GuiHandler());
-        MinecraftForge.EVENT_BUS.register(new Drops());//register our drop handler example
+        MinecraftForge.EVENT_BUS.register(new DropsHandler());//register our drop handler example
         Smelting.init();
         EntityInfo.init();
 
