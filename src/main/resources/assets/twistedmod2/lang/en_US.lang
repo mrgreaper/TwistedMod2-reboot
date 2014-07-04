@@ -1,11 +1,13 @@
-itemGroup.TwistedMod2=Twisted Mod 2
+itemGroup.Mr G's Twisted Mod=Twisted Mod 2
 
 
 
 tile.oreBunnyite.name=Bunnyite Ore
 tile.Speaker.name=Speaker
 tile.blockBunnyite.name=Block of Bunnyite
-
+tile.oreCystalizedBlood.name=Crystalized Bunny Blood
+tile.BunnyFurnaceIdle.name=Bunny Furnace
+tile.BunnyFurnaceActive.name=Bunny Furnace
 
 item.DeadBunny.name=Dead Bunny
 item.BunnyiteIngot.name=Bunnyite Ingot
@@ -22,3 +24,5 @@ item.BunnyitePlate.name=Bunnyite Plate
 item.BunnyiteAxe.name=Bunnyite Axe
 item.BunnyitePickaxe.name=Bunnyite PickAxe
 item.BunnyiteSpade.name=Bunnyite Spade
+item.TwistedBloodCrystal.name=Bunny Blood Crystal
+item.EnergizedBunny.name=Staticly Charged Bunny

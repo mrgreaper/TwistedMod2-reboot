@@ -25,8 +25,8 @@ public class BlockInfo {
         oreBunnyite = new oreBlock(Material.rock).setBlockName("oreBunnyite");
         blockBunnyite = new blockBunnyite(Material.iron).setBlockName("blockBunnyite");
         oreCystalizedBlood = new oreBlock(Material.rock).setBlockName("oreCystalizedBlood");
-        blockBunnyFurnaceIdle = new blockBunnyFurnace(false,Material.iron).setBlockName("BunnyFurnaceIdle").setCreativeTab(TwistedMod2.TwistedModTab);
-        blockBunnyFurnaceActive = new blockBunnyFurnace(false,Material.iron).setBlockName("BunnyFurnaceActive").setCreativeTab(TwistedMod2.TwistedModTab);
+        blockBunnyFurnaceIdle = new blockBunnyFurnace(false,Material.iron).setBlockName("BunnyFurnaceIdle").setCreativeTab(TwistedMod2.TwistedModTab).setHardness(3.5F);
+        blockBunnyFurnaceActive = new blockBunnyFurnace(false,Material.iron).setBlockName("BunnyFurnaceActive").setCreativeTab(TwistedMod2.TwistedModTab).setHardness(3.5F).setLightLevel(2f);
 
         GameRegistry.registerBlock(blockSpeaker,"Speaker");
         GameRegistry.registerBlock(oreBunnyite,"oreBunnyite");

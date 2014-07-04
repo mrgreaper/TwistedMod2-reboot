@@ -1,6 +1,7 @@
 package com.mrgreaper.twistedmod2.entitys;
 
 import com.mrgreaper.twistedmod2.blocks.blockBunnyFurnace;
+import com.mrgreaper.twistedmod2.utility.LogHelper;
 import com.mrgreaper.twistedmod2.utility.fuelItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,6 +12,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
 /**
@@ -81,41 +84,45 @@ public class TileEntityBunnyFurnace extends TileEntity implements ISidedInventor
     public void updateEntity() {
         boolean flag = this.burnTime > 0;
         boolean flag1 = false;
-        if (this.isBurning()) {
-            this.burnTime --;
+
+        if(this.isBurning()) {
+            this.burnTime--;
         }
-        if (!this.worldObj.isRemote){//if this is client side
-            if(this.burnTime==0 && this.canSmelt()){
+        if(!this.worldObj.isRemote) {
+            if(this.burnTime == 0 && this.canSmelt()) {
                 this.currentItemBurnTime = this.burnTime = fuelItems.getItemBurntime(this.slots[1]);
+                //LogHelper.info("burn time :"+burnTime);
 
-                if(this.isBurning()){
-                    flag1 =true;
+                if(this.isBurning()) {
+                    flag1 = true;
 
-                    if (this.slots[1] != null){//if there is an item in slot 1
-                        this.slots[1].stackSize--; //remove 1 item from the stack in slot 1
-                        if (this.slots[1].stackSize == 0){
-                            this.slots[1]= this.slots[1].getItem().getContainerItem(this.slots[1]);//should return a bucket if it was a lava bucket
+                    if(this.slots[1] != null) {
+                        this.slots[1].stackSize--;
+
+                        if(this.slots[1].stackSize == 0) {
+                            this.slots[1] = this.slots[1].getItem().getContainerItem(this.slots[1]);
                         }
                     }
                 }
             }
-        }
-        if (this.isBurning()&&this.canSmelt()){
-            this.cookTime++; //if it can smelt and is burning the cook time goes up
+            if(this.isBurning() && this.canSmelt()) {
+                this.cookTime++;
 
-            if (this.cookTime ==this.furnaceSpeed){//so when the cook time reaches the goal speed it smelts the item and adds the next, so lower furnacespeed value faster it workds
-                this.cookTime = 0;
-                this.smeltItem();
-                flag1=true;
+                if(this.cookTime == this.furnaceSpeed) {
+                    this.cookTime = 0;
+                    this.smeltItem();
+                    flag1 = true;
+                }
             }else{
-                this.cookTime =0;
+                this.cookTime = 0;
             }
-            if (flag != this.isBurning()){
-                flag1=true;
-                blockBunnyFurnace.updateblockBunnyFurnaceState(this.burnTime >0, this.worldObj,this.xCoord,this.yCoord,this.zCoord);
+
+            if(flag != this.isBurning()) {
+                flag1 = true;
+                blockBunnyFurnace.updateblockBunnyFurnaceState(this.burnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
             }
         }
-        if (flag1){
+        if(flag1) {
             this.markDirty();
         }
     }
@@ -224,4 +231,53 @@ public class TileEntityBunnyFurnace extends TileEntity implements ISidedInventor
     public int getCookProgressScaled(int i){
         return this.cookTime *i /this.furnaceSpeed;
     }
+    public void readFromNBT(NBTTagCompound nbt) {
+        super.readFromNBT(nbt);
+
+        NBTTagList list = nbt.getTagList("Items", 10);
+        this.slots = new ItemStack[this.getSizeInventory()];
+
+        for(int i = 0; i < list.tagCount(); i++) {
+            NBTTagCompound compound = (NBTTagCompound) list.getCompoundTagAt(i);
+            byte b = compound.getByte("Slot");
+
+            if(b >= 0 && b < this.slots.length) {
+                this.slots[b] = ItemStack.loadItemStackFromNBT(compound);
+            }
+        }
+
+        this.burnTime = (int)nbt.getShort("BurnTime");
+        this.cookTime = (int)nbt.getShort("CookTime");
+        this.currentItemBurnTime = (int)nbt.getShort("CurrentBurnTime");
+
+        if(nbt.hasKey("CustomName")) {
+            this.localizedName = nbt.getString("CustomName");
+        }
+    }
+
+    public void writeToNBT(NBTTagCompound nbt) {
+        super.writeToNBT(nbt);
+
+        nbt.setShort("BurnTime", (short)this.burnTime);
+        nbt.setShort("CookTime", (short)this.cookTime);
+        nbt.setShort("CurrentBurnTime", (short)this.currentItemBurnTime);
+
+        NBTTagList list = new NBTTagList();
+
+        for (int i = 0; i < this.slots.length; i++) {
+            if(this.slots[i] != null) {
+                NBTTagCompound compound = new NBTTagCompound();
+                compound.setByte("Slot", (byte)i);
+                this.slots[i].writeToNBT(compound);
+                list.appendTag(compound);
+            }
+        }
+
+        nbt.setTag("Items", list);
+
+        if (this.hasCustomInventoryName()) {
+            nbt.setString("CustomName", this.localizedName);
+        }
+    }
 }
+

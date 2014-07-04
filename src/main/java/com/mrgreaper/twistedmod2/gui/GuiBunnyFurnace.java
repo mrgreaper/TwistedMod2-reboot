@@ -29,9 +29,9 @@ public static final ResourceLocation bground = new ResourceLocation(Reference.MO
     }
 
     public void drawGuiContainerForegroundLayer(int par1, int par2){
-        String name = this.BunnyFurnace.hasCustomInventoryName() ? this.BunnyFurnace.getInventoryName() : I18n.format(this.BunnyFurnace.getInventoryName(),new Object[0]);
+        String name = "Bunny Furnace";
         this.fontRendererObj.drawString(name,this.xSize / 2 -this.fontRendererObj.getStringWidth(name)/2,6,4210752); //this writes the name (we are finding the centre of the gui then we get the width of the name and find the center of that ,font size,font colour)
-        this.fontRendererObj.drawString(I18n.format("Container.inventory",new Object[0]),115,this.ySize - 96 +2,4210752); //this will write the word of inventory (128 is how far on the x alignment where you want it
+        this.fontRendererObj.drawString(I18n.format("container.inventory",new Object[0]),115,this.ySize - 96 +2,4210752); //this will write the word of inventory (115 is how far on the x alignment where you want it
     }
 
 
@@ -43,5 +43,16 @@ public static final ResourceLocation bground = new ResourceLocation(Reference.MO
         Minecraft.getMinecraft().getTextureManager().bindTexture(bground);
         drawTexturedModalRect(guiLeft,guiTop,0,0,xSize,ySize);
 
+        if(this.BunnyFurnace.isBurning()){
+            int k = this.BunnyFurnace.getBurnTimeRemainingScaled(40);//40 is th width of the scale made for this (next to fuel in slot)
+            int j = 40 -k; // to invert the number as the cook time will be a count down
+            drawTexturedModalRect(guiLeft + 30,guiTop + 62,176,1, 40-j,10 );//(start from far left,start from top,image were using left start,image were using start height,increment,height of image were using)
+        }
+
+        int k = this.BunnyFurnace.getCookProgressScaled(24);//24 is the width of the arrow
+        drawTexturedModalRect(guiLeft + 79,guiTop +34,176,13,k+1,16);
+
     }
+
+
 }
