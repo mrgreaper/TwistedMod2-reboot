@@ -2,10 +2,10 @@ package com.mrgreaper.twistedmod2;
 
 import com.mrgreaper.twistedmod2.proxy.IProxy;
 import com.mrgreaper.twistedmod2.reference.Recipies;
-import com.mrgreaper.twistedmod2.blocks.BlockInfo;
+import com.mrgreaper.twistedmod2.reference.BlockInfo;
 import com.mrgreaper.twistedmod2.entitys.EntityInfo;
 import com.mrgreaper.twistedmod2.handlers.*;
-import com.mrgreaper.twistedmod2.items.ItemInfo;
+import com.mrgreaper.twistedmod2.reference.ItemInfo;
 import com.mrgreaper.twistedmod2.reference.Reference;
 import com.mrgreaper.twistedmod2.utility.LogHelper;
 import cpw.mods.fml.common.FMLCommonHandler;

@@ -1,6 +1,6 @@
 package com.mrgreaper.twistedmod2.handlers;
 
-import com.mrgreaper.twistedmod2.blocks.BlockInfo;
+import com.mrgreaper.twistedmod2.reference.BlockInfo;
 import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;

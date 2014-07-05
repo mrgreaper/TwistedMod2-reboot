@@ -1,8 +1,7 @@
 package com.mrgreaper.twistedmod2.utility;
 
 import com.mrgreaper.twistedmod2.handlers.ConfigHandler;
-import com.mrgreaper.twistedmod2.items.ItemInfo;
-import com.mrgreaper.twistedmod2.reference.Reference;
+import com.mrgreaper.twistedmod2.reference.ItemInfo;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;

@@ -1,6 +1,6 @@
 package com.mrgreaper.twistedmod2.handlers;
 
-import com.mrgreaper.twistedmod2.items.ItemInfo;
+import com.mrgreaper.twistedmod2.reference.ItemInfo;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import net.minecraft.inventory.IInventory;

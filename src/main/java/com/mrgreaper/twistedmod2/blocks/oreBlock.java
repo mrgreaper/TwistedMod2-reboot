@@ -1,7 +1,8 @@
 package com.mrgreaper.twistedmod2.blocks;
 
 import com.mrgreaper.twistedmod2.TwistedMod2;
-import com.mrgreaper.twistedmod2.items.ItemInfo;
+import com.mrgreaper.twistedmod2.reference.BlockInfo;
+import com.mrgreaper.twistedmod2.reference.ItemInfo;
 import com.mrgreaper.twistedmod2.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

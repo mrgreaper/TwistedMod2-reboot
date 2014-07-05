@@ -1,6 +1,6 @@
 package com.mrgreaper.twistedmod2.handlers;
 
-import com.mrgreaper.twistedmod2.blocks.BlockInfo;
+import com.mrgreaper.twistedmod2.reference.BlockInfo;
 import com.mrgreaper.twistedmod2.container.ContainerBunnyFurnace;
 import com.mrgreaper.twistedmod2.entitys.TileEntityBunnyFurnace;
 import com.mrgreaper.twistedmod2.gui.GuiBunnyFurnace;

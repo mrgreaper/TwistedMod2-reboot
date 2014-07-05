@@ -2,6 +2,7 @@ package com.mrgreaper.twistedmod2.blocks;
 
 import com.mrgreaper.twistedmod2.TwistedMod2;
 import com.mrgreaper.twistedmod2.entitys.TileEntityBunnyFurnace;
+import com.mrgreaper.twistedmod2.reference.BlockInfo;
 import com.mrgreaper.twistedmod2.reference.Reference;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;

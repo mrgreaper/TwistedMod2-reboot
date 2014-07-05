@@ -1,16 +1,13 @@
 package com.mrgreaper.twistedmod2.handlers;
 
-import com.mrgreaper.twistedmod2.items.ItemInfo;
+import com.mrgreaper.twistedmod2.reference.ItemInfo;
 import com.mrgreaper.twistedmod2.reference.Reference;
 import com.mrgreaper.twistedmod2.utility.LogHelper;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.event.entity.item.ItemEvent;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
 
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
