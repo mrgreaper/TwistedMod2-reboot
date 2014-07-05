@@ -21,8 +21,8 @@ public class itemBunnyitePunch extends Item {
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister){
-        this.itemIcon = iconRegister.registerIcon(Reference.MODID+":"+this.getUnlocalizedName().substring(5));
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(Reference.MODID + ":" + this.getUnlocalizedName().substring(5));
     }
 }
 

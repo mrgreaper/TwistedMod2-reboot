@@ -17,8 +17,8 @@ public class itemBunnySword extends ItemSword {
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister){
-        this.itemIcon = iconRegister.registerIcon(Reference.MODID+":"+this.getUnlocalizedName().substring(5));
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(Reference.MODID + ":" + this.getUnlocalizedName().substring(5));
     }
 
 }

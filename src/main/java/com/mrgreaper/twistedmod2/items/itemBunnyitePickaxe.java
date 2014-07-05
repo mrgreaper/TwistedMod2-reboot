@@ -10,14 +10,14 @@ import net.minecraft.item.ItemPickaxe;
 /**
  * Created by david on 24/06/2014.
  */
-public class itemBunnyitePickaxe extends ItemPickaxe{
+public class itemBunnyitePickaxe extends ItemPickaxe {
     public itemBunnyitePickaxe(ToolMaterial p_i45347_1_) {
         super(p_i45347_1_);
         this.setCreativeTab(TwistedMod2.TwistedModTab);
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister){
-        this.itemIcon = iconRegister.registerIcon(Reference.MODID+":"+this.getUnlocalizedName().substring(5));
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(Reference.MODID + ":" + this.getUnlocalizedName().substring(5));
     }
 }

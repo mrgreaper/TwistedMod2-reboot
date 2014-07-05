@@ -11,7 +11,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 /**
  * Created by david on 23/06/2014.
  */
-public class blockSpeaker extends Block{
+public class blockSpeaker extends Block {
 
 
     public blockSpeaker(Material material) {
@@ -24,7 +24,7 @@ public class blockSpeaker extends Block{
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister){
-        this.blockIcon = iconRegister.registerIcon(Reference.MODID+":"+this.getUnlocalizedName().substring(5));
+    public void registerBlockIcons(IIconRegister iconRegister) {
+        this.blockIcon = iconRegister.registerIcon(Reference.MODID + ":" + this.getUnlocalizedName().substring(5));
     }
 }

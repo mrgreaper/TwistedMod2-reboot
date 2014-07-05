@@ -1,8 +1,9 @@
 package com.mrgreaper.twistedmod2.reference;
 
-import com.mrgreaper.twistedmod2.TwistedMod2;
 import com.mrgreaper.twistedmod2.handlers.materials;
-import com.mrgreaper.twistedmod2.items.*;
+import com.mrgreaper.twistedmod2.items.itemBunnyiteAxe;
+import com.mrgreaper.twistedmod2.items.itemBunnyiteSpade;
+import com.mrgreaper.twistedmod2.items.twistedItems;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
@@ -30,24 +31,24 @@ public class ItemInfo {
     public static Item itemBloodCrystal = new twistedItems().setUnlocalizedName("TwistedBloodCrystal");
 
 
-    public static void init(){
-        GameRegistry.registerItem(itemDeadBunny,"deadBunny");
-        GameRegistry.registerItem(itemBunnyiteIngot,"BunnyiteIngot");
-        GameRegistry.registerItem(itemLivingBunny,"LivingBunny");
-        GameRegistry.registerItem(itemBunnyiteWasher,"BunnyiteWasher");
-        GameRegistry.registerItem(itemRedballoon,"RedBalloon");
-        GameRegistry.registerItem(itemDeathOrb,"DeathOrb");
-        GameRegistry.registerItem(itemOrphanLeg,"OrphanLeg");
-        GameRegistry.registerItem(itemBunnySwordHilt,"BunnySwordHilt");
-        GameRegistry.registerItem(itemBunnySword,"BunnySword");
-        GameRegistry.registerItem(itemBloodCrystal,"TwistedBloodCrystal");
-        GameRegistry.registerItem(itemBunnyiteSpade,"BunnyiteSpade");
-        GameRegistry.registerItem(itemEnergizedBunny,"EnergizedBunny");
-        GameRegistry.registerItem(itemTwistedHammer,"TwistedHammer");
-        GameRegistry.registerItem(itemBunnyitePunch,"BunnyitePunch");
-        GameRegistry.registerItem(itemBunnyitePlate,"BunnyitePlate");
-        GameRegistry.registerItem(itemBunnyitePickaxe,"BunnyitePickaxe");
-        GameRegistry.registerItem(itemBunnyiteAxe,"BunnyiteAxe");
+    public static void init() {
+        GameRegistry.registerItem(itemDeadBunny, "deadBunny");
+        GameRegistry.registerItem(itemBunnyiteIngot, "BunnyiteIngot");
+        GameRegistry.registerItem(itemLivingBunny, "LivingBunny");
+        GameRegistry.registerItem(itemBunnyiteWasher, "BunnyiteWasher");
+        GameRegistry.registerItem(itemRedballoon, "RedBalloon");
+        GameRegistry.registerItem(itemDeathOrb, "DeathOrb");
+        GameRegistry.registerItem(itemOrphanLeg, "OrphanLeg");
+        GameRegistry.registerItem(itemBunnySwordHilt, "BunnySwordHilt");
+        GameRegistry.registerItem(itemBunnySword, "BunnySword");
+        GameRegistry.registerItem(itemBloodCrystal, "TwistedBloodCrystal");
+        GameRegistry.registerItem(itemBunnyiteSpade, "BunnyiteSpade");
+        GameRegistry.registerItem(itemEnergizedBunny, "EnergizedBunny");
+        GameRegistry.registerItem(itemTwistedHammer, "TwistedHammer");
+        GameRegistry.registerItem(itemBunnyitePunch, "BunnyitePunch");
+        GameRegistry.registerItem(itemBunnyitePlate, "BunnyitePlate");
+        GameRegistry.registerItem(itemBunnyitePickaxe, "BunnyitePickaxe");
+        GameRegistry.registerItem(itemBunnyiteAxe, "BunnyiteAxe");
 
     }
 }

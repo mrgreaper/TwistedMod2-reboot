@@ -1,7 +1,5 @@
 package com.mrgreaper.twistedmod2.entitys;
 
-import com.mrgreaper.twistedmod2.handlers.GuiHandler;
-import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
@@ -9,7 +7,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
  */
 public class EntityInfo {
 
-    public static void init(){
-        GameRegistry.registerTileEntity(TileEntityBunnyFurnace.class,"BunnyFurnace");
+    public static void init() {
+        GameRegistry.registerTileEntity(TileEntityBunnyFurnace.class, "BunnyFurnace");
     }
 }

@@ -16,19 +16,19 @@ import java.util.concurrent.ThreadLocalRandom;
 public class EventHandler {
 
     @SubscribeEvent
-    public void onConfigurationChangeEvent(ConfigChangedEvent.OnConfigChangedEvent event){
-        if (event.modID.equalsIgnoreCase(Reference.MODID)){
+    public void onConfigurationChangeEvent(ConfigChangedEvent.OnConfigChangedEvent event) {
+        if (event.modID.equalsIgnoreCase(Reference.MODID)) {
             ConfigHandler.loadConfiguration();
         }
     }
 
     @SubscribeEvent
-    public void onPlayerUseItem(PlayerUseItemEvent event){
+    public void onPlayerUseItem(PlayerUseItemEvent event) {
         ItemStack item = event.item;
         LogHelper.info("Item is : " + item);
-        if (item.getItem() == ItemInfo.itemEnergizedBunny){
-            int ran = ThreadLocalRandom.current().nextInt(4)+1;
-            LogHelper.info("ran is equal to :"+ran);
+        if (item.getItem() == ItemInfo.itemEnergizedBunny) {
+            int ran = ThreadLocalRandom.current().nextInt(4) + 1;
+            LogHelper.info("ran is equal to :" + ran);
             switch (ran) { //use that number
                 case 1:
                     SoundHandler.onEntityPlay("bunnyBegA", event.entityPlayer.worldObj, event.entityPlayer, 1, 1);

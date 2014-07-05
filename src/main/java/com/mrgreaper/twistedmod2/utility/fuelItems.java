@@ -16,9 +16,9 @@ import net.minecraft.item.ItemStack;
 public class fuelItems {
 
     public static int getItemBurntime(ItemStack itemstack) {//a helper util for fuels
-        if(itemstack == null){
+        if (itemstack == null) {
             return 0;
-        }else {
+        } else {
             Item item = itemstack.getItem();
             if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air) {//this bit is to deal with if the item is a block...we get the item version of it
                 Block block = Block.getBlockFromItem(item);
@@ -32,6 +32,6 @@ public class fuelItems {
             if (item == Items.lava_bucket) return 2000;
             if (item == Items.blaze_rod) return 2400;
         }
-                return GameRegistry.getFuelValue(itemstack);
+        return GameRegistry.getFuelValue(itemstack);
     }
 }

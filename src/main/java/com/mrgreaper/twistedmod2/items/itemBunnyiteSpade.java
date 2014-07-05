@@ -17,8 +17,9 @@ public class itemBunnyiteSpade extends ItemSpade {
         super(p_i45353_1_);
         this.setCreativeTab(TwistedMod2.TwistedModTab);
     }
+
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister){
-        this.itemIcon = iconRegister.registerIcon(Reference.MODID+":"+this.getUnlocalizedName().substring(5));
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(Reference.MODID + ":" + this.getUnlocalizedName().substring(5));
     }
 }

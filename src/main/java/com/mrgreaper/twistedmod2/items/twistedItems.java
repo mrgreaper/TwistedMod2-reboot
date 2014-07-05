@@ -10,15 +10,15 @@ import net.minecraft.item.Item;
 /**
  * Created by david on 23/06/2014.
  */
-public class twistedItems extends Item{
+public class twistedItems extends Item {
 
     public twistedItems() {
         this.setCreativeTab(TwistedMod2.TwistedModTab);
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister){
-        this.itemIcon = iconRegister.registerIcon(Reference.MODID+":"+this.getUnlocalizedName().substring(5));
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(Reference.MODID + ":" + this.getUnlocalizedName().substring(5));
     }
 
 }

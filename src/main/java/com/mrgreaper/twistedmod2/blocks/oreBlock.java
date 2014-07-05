@@ -28,18 +28,18 @@ public class oreBlock extends Block {
         this.setCreativeTab(TwistedMod2.TwistedModTab);
     }
 
-    public Item getItemDropped(int i,Random random,int j){
+    public Item getItemDropped(int i, Random random, int j) {
         return this == BlockInfo.oreCystalizedBlood ? ItemInfo.itemBloodCrystal : Item.getItemFromBlock(this);
         // so were saying if the block is oreCystalizedBlood then drop itemBloodCrystal
     }
 
     public int quantityDropped(Random random) {
-        return this == BlockInfo.oreCystalizedBlood ? 4+ random.nextInt(5) :1;
+        return this == BlockInfo.oreCystalizedBlood ? 4 + random.nextInt(5) : 1;
         //to control the amount dropped
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister){
-        this.blockIcon = iconRegister.registerIcon(Reference.MODID+":"+this.getUnlocalizedName().substring(5));
+    public void registerBlockIcons(IIconRegister iconRegister) {
+        this.blockIcon = iconRegister.registerIcon(Reference.MODID + ":" + this.getUnlocalizedName().substring(5));
     }
 }
