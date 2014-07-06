@@ -60,6 +60,72 @@ public class TwistedEventHandler {
                 if (itemstack.getItem() == ItemInfo.itemDeathOrb && !event.player.worldObj.isRemote){
                     SoundHandler.onEntityPlay("deathOrbStartup",event.player.worldObj, event.player,1,1);
                 }
+                if (itemstack.getItem() == ItemInfo.itemDeadBunny && !event.player.worldObj.isRemote){
+                    int ran =ThreadLocalRandom.current().nextInt(5)+1;
+                    switch(ran){
+                        case 1:
+                           SoundHandler.miniSoundPlay("evilvoice-IsItDead",event.player);
+                            break;
+                        case 2:
+                            SoundHandler.miniSoundPlay("evilvoice-BringToLife",event.player);
+                            break;
+                        case 3:
+                            SoundHandler.miniSoundPlay("evilvoice-WeakBringLife",event.player);
+                            break;
+                        case 4:
+                            SoundHandler.miniSoundPlay("evilvoice-NoPower",event.player);
+                            break;
+                        case 5:
+                            SoundHandler.miniSoundPlay("evilvoice-WorldTremble",event.player);
+                    }
+                }
+                if (itemstack.getItem() == ItemInfo.itemLivingBunny && !event.player.worldObj.isRemote){
+                    int ran =ThreadLocalRandom.current().nextInt(7)+1;
+                    switch(ran){
+                        case 1:
+                            SoundHandler.miniSoundPlay("evilvoice-Beautiful",event.player);
+                            break;
+                        case 2:
+                            SoundHandler.miniSoundPlay("evilvoice-BeCareful",event.player);
+                            break;
+                        case 3:
+                            SoundHandler.miniSoundPlay("evilvoice-BurnIt",event.player);
+                            break;
+                        case 4:
+                            SoundHandler.miniSoundPlay("evilvoice-LookCreated",event.player);
+                            break;
+                        case 5:
+                            SoundHandler.miniSoundPlay("evilvoice-NoseTwitch",event.player);
+                            break;
+                        case 6:
+                            SoundHandler.miniSoundPlay("evilvoice-ReleaseEvilCreature",event.player);
+                            break;
+                        case 7:
+                            SoundHandler.miniSoundPlay("evilvoice-ThePowerCalls",event.player);
+                            break;
+                    }
+                }
+
+                if (itemstack.getItem() == ItemInfo.itemOrphanLeg && !event.player.worldObj.isRemote){
+                    int ran =ThreadLocalRandom.current().nextInt(3)+1;
+                    switch(ran){
+                        case 1:
+                            SoundHandler.miniSoundPlay("evilvoice-Delicous",event.player);
+                            break;
+                        case 2:
+                            SoundHandler.miniSoundPlay("evilvoice-DoNotPityOrphan",event.player);
+                            break;
+                        case 3:
+                            SoundHandler.miniSoundPlay("evilvoice-Replant",event.player);
+                            break;
+                        case 4:
+                            //SoundHandler.miniSoundPlay("evilvoice-NoPower",event.player);
+                            break;
+                        case 5:
+                            //SoundHandler.miniSoundPlay("evilvoice-WorldTremble",event.player);
+                    }
+                }
+
 
                 if (itemstack.getItem() == ItemInfo.itemEnergizedBunny && !event.player.worldObj.isRemote) {
                     int ran = ThreadLocalRandom.current().nextInt(5) + 1;
