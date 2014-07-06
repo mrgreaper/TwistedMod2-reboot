@@ -8,6 +8,8 @@ tile.blockBunnyite.name=Block of Bunnyite
 tile.oreCystalizedBlood.name=Crystalized Bunny Blood
 tile.BunnyFurnaceIdle.name=Bunny Furnace
 tile.BunnyFurnaceActive.name=Bunny Furnace
+tile.orphantears.name=Orphan Tears
+tile.bunnyblood.name=Bunny Blood
 
 item.DeadBunny.name=Dead Bunny
 item.BunnyiteIngot.name=Bunnyite Ingot
@@ -25,4 +27,6 @@ item.BunnyiteAxe.name=Bunnyite Axe
 item.BunnyitePickaxe.name=Bunnyite PickAxe
 item.BunnyiteSpade.name=Bunnyite Spade
 item.TwistedBloodCrystal.name=Bunny Blood Crystal
-item.EnergizedBunny.name=Staticly Charged Bunny
+item.EnergizedBunny.name=Statically Charged Bunny
+item.bucketOfOrphanTears.name=Bucket of orphan Tears
+item.bucketOfBunnyBlood.name=Bucket of Bunny Blood

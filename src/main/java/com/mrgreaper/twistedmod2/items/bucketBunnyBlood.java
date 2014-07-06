@@ -11,10 +11,10 @@ import net.minecraft.item.ItemBucket;
 /**
  * Created by david on 06/07/2014.
  */
-public class bucketOrphanTears extends ItemBucket {
-    public bucketOrphanTears(Block fluidBlock) {
+public class bucketBunnyBlood extends ItemBucket {
+    public bucketBunnyBlood(Block fluidBlock) {
         super(fluidBlock);
-        this.setUnlocalizedName("bucketOfOrphanTears");
+        this.setUnlocalizedName("bucketOfBunnyBlood");
         this.setCreativeTab(TwistedMod2.TwistedModTab);
     }
 
