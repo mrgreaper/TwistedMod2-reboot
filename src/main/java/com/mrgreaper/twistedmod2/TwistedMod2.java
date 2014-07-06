@@ -3,10 +3,7 @@ package com.mrgreaper.twistedmod2;
 import com.mrgreaper.twistedmod2.entitys.EntityInfo;
 import com.mrgreaper.twistedmod2.handlers.*;
 import com.mrgreaper.twistedmod2.proxy.IProxy;
-import com.mrgreaper.twistedmod2.reference.BlockInfo;
-import com.mrgreaper.twistedmod2.reference.ItemInfo;
-import com.mrgreaper.twistedmod2.reference.Recipies;
-import com.mrgreaper.twistedmod2.reference.Reference;
+import com.mrgreaper.twistedmod2.reference.*;
 import com.mrgreaper.twistedmod2.utility.LogHelper;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -48,13 +45,14 @@ public class TwistedMod2 {
             }
         };
         ItemInfo.init();//to make things neater lets use an info class
-        BlockInfo.init();
-        Recipies.init();
+        BlockInfo.init();//and a block one
+        Recipies.init();//and a recipie one
+        FluidInfo.init();// and a fluid one
         GameRegistry.registerWorldGenerator(eventWorldGen, 0);
         ConfigHandler.init(event.getSuggestedConfigurationFile());
 
 
-        LogHelper.info("pre initialisation complete!");
+        LogHelper.info("pre initialisation complete!");//left so i wont forget how to use the log helper..not that its exactly rocket science, for one theres no rockets :(
     }
 
     @Mod.EventHandler
