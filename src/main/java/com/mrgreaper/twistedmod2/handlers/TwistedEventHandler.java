@@ -1,5 +1,7 @@
 package com.mrgreaper.twistedmod2.handlers;
 
+import com.mrgreaper.twistedmod2.TwistedMod2;
+import com.mrgreaper.twistedmod2.reference.FluidInfo;
 import com.mrgreaper.twistedmod2.reference.ItemInfo;
 import com.mrgreaper.twistedmod2.reference.Reference;
 import com.mrgreaper.twistedmod2.utility.LogHelper;
@@ -11,6 +13,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
+import sun.rmi.runtime.Log;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -19,6 +22,10 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class TwistedEventHandler {
 
+    private String current;
+    private String old;
+    private boolean hasPlayed = false;
+
     @SubscribeEvent
     public void onConfigurationChangeEvent(ConfigChangedEvent.OnConfigChangedEvent event) {
         if (event.modID.equalsIgnoreCase(Reference.MODID)) {
@@ -26,78 +33,62 @@ public class TwistedEventHandler {
         }
     }
 
-    @SubscribeEvent
-    public void onPlayerUseItem(PlayerUseItemEvent event) {
-        ItemStack item = event.item;
-        LogHelper.info("Item is : " + item);
-        if (item.getItem() == ItemInfo.itemEnergizedBunny) {
-            int ran = ThreadLocalRandom.current().nextInt(4) + 1;
-            LogHelper.info("ran is equal to :" + ran);
-            switch (ran) { //use that number
-                case 1:
-                    SoundHandler.onEntityPlay("bunnyBegA", event.entityPlayer.worldObj, event.entityPlayer, 1, 1);
-                    break;
-                case 2:
-                    SoundHandler.onEntityPlay("bunnyBegB", event.entityPlayer.worldObj, event.entityPlayer, 1, 1);
-                    break;
-                case 3:
-                    SoundHandler.onEntityPlay("bunnyBegC", event.entityPlayer.worldObj, event.entityPlayer, 1, 1);
-                    break;
-                case 4:
-                    SoundHandler.onEntityPlay("bunnyBegD", event.entityPlayer.worldObj, event.entityPlayer, 1, 1);
-                    break;
-                case 5:
-                    SoundHandler.onEntityPlay("bunnyBegE", event.entityPlayer.worldObj, event.entityPlayer, 1, 1);
-                    break;
-            }
-
-        }
-    }
-
-    private String current;
-    private String old;
-
     //test script
     @SubscribeEvent
-    @SideOnly(Side.SERVER)
-    public void TwistedTickEvent(TickEvent.PlayerTickEvent event){
-        LogHelper.info("test 1");
+    public void TwistedTickEvent(TickEvent.PlayerTickEvent event) {
+        //LogHelper.info("the event is working : TwistedTickEvent");
         ItemStack itemstack = event.player.getCurrentEquippedItem();
-        current = event.player.getDisplayName()+itemstack;
-        LogHelper.info("current = : "+current);
-        if (itemstack !=null && current != old){
-            if (itemstack.getItem()==ItemInfo.itemEnergizedBunny) {
-                int ran = ThreadLocalRandom.current().nextInt(5) + 1;
-                switch (ran) { //use that number
-                    case 1:
-                        SoundHandler.onEntityPlay("bunnyBegA", event.player.worldObj, event.player, 1, 1);
-                        break;
-                    case 2:
-                        SoundHandler.onEntityPlay("bunnyBegB", event.player.worldObj, event.player, 1, 1);
-                        break;
-                    case 3:
-                        SoundHandler.onEntityPlay("bunnyBegC", event.player.worldObj, event.player, 1, 1);
-                        break;
-                    case 4:
-                        SoundHandler.onEntityPlay("bunnyBegD", event.player.worldObj, event.player, 1, 1);
-                        break;
-                    case 5:
-                        SoundHandler.onEntityPlay("bunnyBegE", event.player.worldObj, event.player, 1, 1);
-                        break;
+        if (itemstack != null) {
+            current = (event.player.getDisplayName() + itemstack.getItem().getUnlocalizedName()).toString();
+        }//should clear up npe when we try to get the itemstack details from null or nothing ...oops
+        else {
+            current = (event.player.getDisplayName() + "item.nothing");
+        }
+        //LogHelper.info("current = : " + current);
+        //LogHelper.info("condition test 1 : " + current.equals(old));
+        if (!current.equals(old) && !event.player.worldObj.isRemote) {
+            //LogHelper.info("should only be seen on one side");
+            old = current;
+            if (itemstack != null) {//have to check its not null first or BLAM there goes the server when it trys to look up the item
+                //here we put in the sounds for on holding our items, these will only play client side to save possible use on griefing and because my sound handler is set up that way lol
+
+
+                if (itemstack.getItem() == FluidInfo.orphanTearsBucket && !event.player.worldObj.isRemote){
+                    //SoundHandler.onEntityPlay("orphanCry", event.player.worldObj, event.player,1,1);
+                    SoundHandler.atWorldplace(event.player.worldObj,event.player.posX,event.player.posY,event.player.posZ,"orphanCry",1,1);
                 }
-                old = current;
+                if (itemstack.getItem() == ItemInfo.itemDeathOrb && !event.player.worldObj.isRemote){
+                    SoundHandler.onEntityPlay("deathOrbStartup",event.player.worldObj, event.player,1,1);
+                }
+
+                if (itemstack.getItem() == ItemInfo.itemEnergizedBunny && !event.player.worldObj.isRemote) {
+                    int ran = ThreadLocalRandom.current().nextInt(5) + 1;
+                    switch (ran) { //use that number
+                        case 1:
+                            SoundHandler.onEntityPlay("bunnyBegA", event.player.worldObj, event.player, 1, 1);
+                            break;
+                        case 2:
+                            SoundHandler.onEntityPlay("bunnyBegB", event.player.worldObj, event.player, 1, 1);
+                            break;
+                        case 3:
+                            SoundHandler.onEntityPlay("bunnyBegC", event.player.worldObj, event.player, 1, 1);
+                            break;
+                        case 4:
+                            SoundHandler.onEntityPlay("bunnyBegD", event.player.worldObj, event.player, 1, 1);
+                            break;
+                        case 5:
+                            SoundHandler.onEntityPlay("bunnyBegE", event.player.worldObj, event.player, 1, 1);
+                            break;
+                    }
+                }
             }
-
-
-        }else{
-            old = event.player.getDisplayName()+" none ";
-            LogHelper.info("Detected empty hands :"+old);
         }
     }
+
 
     @SubscribeEvent//test event
     public void TwistedPickupEvent(PlayerEvent.ItemPickupEvent event) {
-        LogHelper.info("if i can read this then the event handler is working"+event.pickedUp);
+        LogHelper.info("if i can read this then the event handler is working" + event.pickedUp);
 
     }
 
