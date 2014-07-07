@@ -1,53 +1,34 @@
 package com.mrgreaper.twistedmod2.handlers;
 
+import com.mrgreaper.twistedmod2.reference.Reference;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.audio.ITickableSound;
+import net.minecraft.client.audio.MovingSound;
 import net.minecraft.client.audio.PositionedSound;
+import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 
 /**
  * Created by david on 06/07/2014.
  */
-public class SoundHandlerLooped extends PositionedSound implements ITickableSound {
-    protected boolean donePlaying = false;
-    private boolean continuePlaying;
-    private int counterToStop;
+@SideOnly(Side.CLIENT)
+public class SoundHandlerLooped extends MovingSound {
+    private final TileEntity tileentity;
 
-    public SoundHandlerLooped(ResourceLocation path, int xCord, int yCord, int zCord, float volume, float pitch) {
-        super(path);
+
+    public SoundHandlerLooped(TileEntity tile, String Soundname) {
+        super(new ResourceLocation(Reference.MODID + ":" + Soundname));
+        this.tileentity = tile;
         this.repeat = true;
-        this.volume = volume;
-        this.field_147663_c = pitch;
-        this.xPosF = xCord;
-        this.yPosF = yCord;
-        this.zPosF = zCord;
-        this.field_147665_h = 0;
+        //this.field_147665_h = 0;
     }
 
-    public SoundHandlerLooped(String path, int xCord, int yCord, int zCord, float volume, float pitch) {
-        this(new ResourceLocation(path), xCord, yCord, zCord, volume, pitch);
-    }
-
-    @Override
-    public boolean isDonePlaying() {
-        return this.donePlaying;
-    }
-
-    @Override
     public void update() {
-        this.counterToStop++;
-        if (!this.continuePlaying) {
-            this.donePlaying = true;
-        }
-        if (this.counterToStop >= 200) {
-            this.counterToStop = 0;
+        if (this.tileentity.isInvalid()) {
             this.donePlaying = true;
         }
     }
-
-    public void setContinuePlaying(boolean var1) {
-        this.continuePlaying = var1;
-    }
-
-
 }
