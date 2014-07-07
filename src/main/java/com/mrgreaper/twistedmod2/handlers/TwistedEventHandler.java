@@ -14,6 +14,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.ISound;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
 import sun.rmi.runtime.Log;
@@ -157,12 +158,41 @@ public class TwistedEventHandler {
     @SubscribeEvent
     public void TwistedChatEvent(ServerChatEvent event) {
         String chatMessage = event.message;
-        LogHelper.info("message is :" + chatMessage);
-        if (chatMessage.startsWith("max") || chatMessage.startsWith("fred") || chatMessage.startsWith("george")) {
-            String[] botname = chatMessage.split(" ", 2); //split the message into two
-            LogHelper.info(botname[0]);
-            //event.setCanceled(true);//cancel the chat as we are treating this as a pm and dont want to disrupt other players
-            BotChat.incoming(event.player, chatMessage, botname[0]);
+        //LogHelper.info("message is :" + chatMessage);
+        if (ConfigHandler.botsPmChat) { //only talk to the bots if its enabled
+            if (chatMessage.startsWith("max")) {
+                String[] messageSplit = chatMessage.split(" ", 2); //so were spliting it at the first space, removing the botname from the start
+                String toBot = messageSplit[1];
+                ChatHandler.pmChat(event.player, chatMessage, event.player.getDisplayName());
+                try {
+                    ChatHandler.pmChat(event.player, BotHandler.maxBot(toBot), "Max");
+                } catch (Exception e) {
+                    LogHelper.error("max didnt want to respond :" + e);
+                }
+                event.setCanceled(true); //we cancel the chat event to stop disruption to players but also as the bot responds BEFORE the question lol
+            }
+            if (chatMessage.startsWith("fred")) {
+                String[] messageSplit = chatMessage.split(" ", 2); //so were spliting it at the first space, removing the botname from the start
+                String toBot = messageSplit[1];
+                ChatHandler.pmChat(event.player, chatMessage, event.player.getDisplayName());
+                try {
+                    ChatHandler.pmChat(event.player, BotHandler.fredBot(toBot), "Fred");
+                } catch (Exception e) {
+                    LogHelper.error("fred didnt want to respond :" + e);
+                }
+                event.setCanceled(true); //we cancel the chat event to stop disruption to players but also as the bot responds BEFORE the question lol
+            }
+            if (chatMessage.startsWith("George")) {
+                String[] messageSplit = chatMessage.split(" ", 2); //so were spliting it at the first space, removing the botname from the start
+                String toBot = messageSplit[1];
+                ChatHandler.pmChat(event.player, chatMessage, event.player.getDisplayName());
+                try {
+                    ChatHandler.pmChat(event.player, BotHandler.georgeBot(toBot), "George");
+                } catch (Exception e) {
+                    LogHelper.error("George didnt want to respond :" + e);
+                }
+                event.setCanceled(true); //we cancel the chat event to stop disruption to players but also as the bot responds BEFORE the question lol
+            }
         }
     }
 

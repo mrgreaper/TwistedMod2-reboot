@@ -50,6 +50,13 @@ public class TwistedMod2 {
         BlockInfo.init();//and a block one
         Recipies.init();//and a recipie one
         FluidInfo.init();// and a fluid one
+        try {
+            BotHandler.init();
+            LogHelper.info("Bots are loaded");
+            //LogHelper.info(BotHandler.fredBot("hello how are you today"));
+        } catch (Exception e) {
+            LogHelper.error("Bots failed to load :" + e);
+        }
         GameRegistry.registerWorldGenerator(eventWorldGen, 0);
         ConfigHandler.init(event.getSuggestedConfigurationFile());
 

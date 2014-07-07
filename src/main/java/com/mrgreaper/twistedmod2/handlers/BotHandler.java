@@ -16,32 +16,18 @@ public class BotHandler {
     private static ChatterBotSession georgeSession;
 
 
-    public static void init() {
+    public static void init() throws Exception {
         ChatterBotFactory factory = new ChatterBotFactory();
-        try {
-            ChatterBot max = factory.create(ChatterBotType.CLEVERBOT);
-            maxSession = max.createSession();
-        } catch (Exception e) {
-
-            LogHelper.info("Failed to create Max bot error : " + e);
-        }
-        ChatterBot fred = null;
-        try {
-            fred = factory.create(ChatterBotType.JABBERWACKY);
-            fredSession = fred.createSession();
-        } catch (Exception e) {
-            LogHelper.info("Failed to create Fred bot error : " + e);
-        }
-        ChatterBot george = null;
-        try {
-            george = factory.create(ChatterBotType.PANDORABOTS, "b0dafd24ee35a477");
-            georgeSession = george.createSession();
-        } catch (Exception e) {
-            LogHelper.info("Failed to create George bot error : " + e);
-        }
+        ChatterBot max = factory.create(ChatterBotType.CLEVERBOT);
+        maxSession = max.createSession();
+        ChatterBot fred = factory.create(ChatterBotType.JABBERWACKY);
+        fredSession = fred.createSession();
+        ChatterBot george = factory.create(ChatterBotType.PANDORABOTS, "b0dafd24ee35a477");
+        georgeSession = george.createSession();
     }
 
     public static String maxBot(String s) throws Exception {
+        LogHelper.info("maxbot recieved :" + s);
         return maxSession.think(s);
     }
 
