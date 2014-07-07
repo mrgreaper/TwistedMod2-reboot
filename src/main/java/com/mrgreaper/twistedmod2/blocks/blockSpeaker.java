@@ -51,6 +51,8 @@ public class blockSpeaker extends BlockContainer {
             if (this.isOn && !world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) {
                 world.scheduleBlockUpdate(xCord, yCord, zCord, this, 4); //hmmm not sure what the 4 is
                 isOn = false;
+                TileEntitySpeaker spealer2 = (TileEntitySpeaker) world.getTileEntity(xCord, yCord, zCord);
+                spealer2.setShouldStop(true);
             } else if (!this.isOn && world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) {
                 isOn = true;
                 TileEntitySpeaker spealer2 = (TileEntitySpeaker) world.getTileEntity(xCord, yCord, zCord);

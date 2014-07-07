@@ -23,12 +23,18 @@ public class SoundHandlerLooped extends MovingSound {
         super(new ResourceLocation(Reference.MODID + ":" + Soundname));
         this.tileentity = tile;
         this.repeat = true;
-        //this.field_147665_h = 0;
     }
+
 
     public void update() {
         if (this.tileentity.isInvalid()) {
             this.donePlaying = true;
         }
     }
+
+    @Override
+    public boolean isDonePlaying() {
+        return this.donePlaying;
+    }
 }
+

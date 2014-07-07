@@ -1,6 +1,8 @@
 package com.mrgreaper.twistedmod2.entitys;
 
+import com.mrgreaper.twistedmod2.handlers.SoundHandlerLooped;
 import com.mrgreaper.twistedmod2.utility.LogHelper;
+import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -13,6 +15,8 @@ public class TileEntitySpeaker extends TileEntity {
     private boolean isPlaying;
     private boolean shouldStop;
     public boolean Actived;
+    private boolean start = false;
+    private SoundHandlerLooped alarmSound;
 
     public boolean isActived() {
         return Actived;
@@ -21,12 +25,34 @@ public class TileEntitySpeaker extends TileEntity {
     public void activateSpeaker(boolean active, String sndName) {
         Actived = active;
         soundName = sndName;
+        LogHelper.info(active + sndName);
+        shouldStop = false;
+        start = true;
+    }
+
+    public void setShouldStop(boolean toggle) {
+        shouldStop = toggle;
     }
 
 
     @Override
     public void updateEntity() {
-
+        //LogHelper.info("Start =  "+start);
+        if (start) {
+            LogHelper.info("YES DETECETED");
+            alarmSound = new SoundHandlerLooped(worldObj.getTileEntity(xCoord, yCoord, zCoord), soundName);
+            start = false;
+            isPlaying = true;
+            if (!worldObj.isRemote) {
+                LogHelper.info("YES IS CLIENT SIDE");
+                Minecraft.getMinecraft().getSoundHandler().playSound(alarmSound);
+            }
+        }
+        if (isPlaying && shouldStop) {
+            LogHelper.info("stopping sound");
+            isInvalid();
+            shouldStop = false;
+        }
     }
 
 
