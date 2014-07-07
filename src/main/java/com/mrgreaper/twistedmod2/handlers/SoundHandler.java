@@ -15,13 +15,15 @@ public class SoundHandler {
     }
 
     //test sound handler
-    public static void atWorldplace(World worldObj,double xCord,double yCord, double zCord, String SoundName,float volume, float pitch){
-        worldObj.playSoundEffect((double) xCord,(double) yCord, (double) zCord, (Reference.MODID+":"+ SoundName),(float) volume, (float) pitch);
+    public static void atWorldplace(World worldObj, double xCord, double yCord, double zCord, String SoundName, float volume, float pitch) {
+        worldObj.playSoundEffect((double) xCord, (double) yCord, (double) zCord, (Reference.MODID + ":" + SoundName), (float) volume, (float) pitch);
     }
 
     //mini call to save typing
-    public static void miniSoundPlay(String soundName,Entity entityName){
+    public static void miniSoundPlay(String soundName, Entity entityName) {
         World world = entityName.worldObj;
-        world.playSoundAtEntity(entityName,(Reference.MODID+":"+soundName),1,1);
+        world.playSoundAtEntity(entityName, (Reference.MODID + ":" + soundName), 1, 1);
     }
+
+
 }

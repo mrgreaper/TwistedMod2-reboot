@@ -11,7 +11,10 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.ISound;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
 import sun.rmi.runtime.Log;
 
@@ -58,7 +61,7 @@ public class TwistedEventHandler {
                     SoundHandler.atWorldplace(event.player.worldObj,event.player.posX,event.player.posY,event.player.posZ,"orphanCry",1,1);
                 }
                 if (itemstack.getItem() == ItemInfo.itemDeathOrb && !event.player.worldObj.isRemote){
-                    SoundHandler.onEntityPlay("deathOrbStartup",event.player.worldObj, event.player,1,1);
+                    SoundHandler.onEntityPlay("deathOrbStartup", event.player.worldObj, event.player, 1, 1);
                 }
                 if (itemstack.getItem() == ItemInfo.itemDeadBunny && !event.player.worldObj.isRemote){
                     int ran =ThreadLocalRandom.current().nextInt(5)+1;
@@ -148,6 +151,18 @@ public class TwistedEventHandler {
                     }
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public void TwistedChatEvent(ServerChatEvent event) {
+        String chatMessage = event.message;
+        LogHelper.info("message is :" + chatMessage);
+        if (chatMessage.startsWith("max") || chatMessage.startsWith("fred") || chatMessage.startsWith("george")) {
+            String[] botname = chatMessage.split(" ", 2); //split the message into two
+            LogHelper.info(botname[0]);
+            //event.setCanceled(true);//cancel the chat as we are treating this as a pm and dont want to disrupt other players
+            BotChat.incoming(event.player, chatMessage, botname[0]);
         }
     }
 
