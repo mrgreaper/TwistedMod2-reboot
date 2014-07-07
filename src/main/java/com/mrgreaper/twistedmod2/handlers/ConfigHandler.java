@@ -16,6 +16,7 @@ public class ConfigHandler {
     public static int bunnyiteToolsMaxUses = 1750;
     public static int bunnyiteToolsHarvestLevel = 3;
     public static boolean botsPmChat = true;
+    public static boolean botsUseSpeech = true;
 
     public static void init(File configFile) {
         if (configuration == null) {
@@ -32,6 +33,7 @@ public class ConfigHandler {
         bunnyiteToolsMaxUses = configuration.getInt("Bunnyite tools: max uses", configuration.CATEGORY_GENERAL, bunnyiteToolsMaxUses, 1, 9000, "The Maximum amount of times you can use a Bunnyite tool reference: wood = 59, stone = 131, iron = 250, diamond = 1561, gold = 32");
         bunnyiteToolsHarvestLevel = configuration.getInt("Bunnyite tools: Harvest level", configuration.CATEGORY_GENERAL, bunnyiteToolsHarvestLevel, 0, 10, "The level of material Bunnyite tools can harvest (3 = DIAMOND, 2 = IRON, 1 = STONE, 0 = IRON/GOLD) WARNING higher then 3 is for other mod support and may cause issues");
         botsPmChat = configuration.getBoolean("Bots: can be pm'd ", configuration.CATEGORY_GENERAL, botsPmChat, "Control if players can pm the bots or not");
+        botsUseSpeech = configuration.getBoolean("Bots: use Speech ", configuration.CATEGORY_GENERAL, botsUseSpeech, "Can the bots use thier voice to communicate?");
 
 
         if (configuration.hasChanged()) {

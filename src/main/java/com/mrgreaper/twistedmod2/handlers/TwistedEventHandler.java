@@ -164,8 +164,13 @@ public class TwistedEventHandler {
                 String[] messageSplit = chatMessage.split(" ", 2); //so were spliting it at the first space, removing the botname from the start
                 String toBot = messageSplit[1];
                 ChatHandler.pmChat(event.player, chatMessage, event.player.getDisplayName());
+
                 try {
-                    ChatHandler.pmChat(event.player, BotHandler.maxBot(toBot), "Max");
+                    String answer = BotHandler.maxBot(toBot);
+                    if (!event.player.worldObj.isRemote && ConfigHandler.botsUseSpeech) {
+                        SpeechThreaded.speechSynth(0, 5, 4, 2, answer);
+                    }
+                    ChatHandler.pmChat(event.player, answer, "Max");
                 } catch (Exception e) {
                     LogHelper.error("max didnt want to respond :" + e);
                 }
@@ -176,18 +181,26 @@ public class TwistedEventHandler {
                 String toBot = messageSplit[1];
                 ChatHandler.pmChat(event.player, chatMessage, event.player.getDisplayName());
                 try {
-                    ChatHandler.pmChat(event.player, BotHandler.fredBot(toBot), "Fred");
+                    String answer = BotHandler.fredBot(toBot);
+                    if (!event.player.worldObj.isRemote && ConfigHandler.botsUseSpeech) {
+                        SpeechThreaded.speechSynth(0, 11, 11, 10, answer);
+                    }
+                    ChatHandler.pmChat(event.player, answer, "Fred");
                 } catch (Exception e) {
                     LogHelper.error("fred didnt want to respond :" + e);
                 }
                 event.setCanceled(true); //we cancel the chat event to stop disruption to players but also as the bot responds BEFORE the question lol
             }
-            if (chatMessage.startsWith("George")) {
+            if (chatMessage.startsWith("george")) {
                 String[] messageSplit = chatMessage.split(" ", 2); //so were spliting it at the first space, removing the botname from the start
                 String toBot = messageSplit[1];
                 ChatHandler.pmChat(event.player, chatMessage, event.player.getDisplayName());
                 try {
-                    ChatHandler.pmChat(event.player, BotHandler.georgeBot(toBot), "George");
+                    String answer = BotHandler.georgeBot(toBot);
+                    if (!event.player.worldObj.isRemote && ConfigHandler.botsUseSpeech) {
+                        SpeechThreaded.speechSynth(1, 0, 60, 10, answer);
+                    }
+                    ChatHandler.pmChat(event.player, answer, "George");
                 } catch (Exception e) {
                     LogHelper.error("George didnt want to respond :" + e);
                 }
@@ -200,6 +213,7 @@ public class TwistedEventHandler {
     @SubscribeEvent//test event
     public void TwistedPickupEvent(PlayerEvent.ItemPickupEvent event) {
         LogHelper.info("if i can read this then the event handler is working" + event.pickedUp);
+
 
     }
 

@@ -1,6 +1,7 @@
 package com.mrgreaper.twistedmod2.entitys;
 
 import com.mrgreaper.twistedmod2.handlers.SoundHandlerLooped;
+import com.mrgreaper.twistedmod2.handlers.SpeechThreaded;
 import com.mrgreaper.twistedmod2.utility.LogHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
@@ -17,6 +18,7 @@ public class TileEntitySpeaker extends TileEntity {
     public boolean Actived;
     private boolean start = false;
     private SoundHandlerLooped alarmSound;
+    //private SpeechThreaded speech = new SpeechThreaded();
 
     public boolean isActived() {
         return Actived;
@@ -45,6 +47,7 @@ public class TileEntitySpeaker extends TileEntity {
             isPlaying = true;
             if (!worldObj.isRemote) {
                 LogHelper.info("YES IS CLIENT SIDE");
+                // SpeechThreaded.speechSynth(1,0,60,10,"This is a test of the speech system");
                 Minecraft.getMinecraft().getSoundHandler().playSound(alarmSound);
             }
         }
