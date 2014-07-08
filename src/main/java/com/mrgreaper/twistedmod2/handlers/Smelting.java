@@ -9,6 +9,8 @@ import net.minecraft.item.ItemStack;
  * Created by david on 23/06/2014.
  */
 public class Smelting {
+    //TODO ...redundent class, either need to move all smelting to this for neetless or just move this to recipie class
+
 
     public static void init() {
         GameRegistry.addSmelting(BlockInfo.oreBunnyite, new ItemStack(ItemInfo.itemBunnyiteIngot), 0);

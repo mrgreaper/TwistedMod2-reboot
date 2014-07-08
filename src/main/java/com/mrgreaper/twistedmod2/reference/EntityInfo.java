@@ -1,5 +1,7 @@
-package com.mrgreaper.twistedmod2.entitys;
+package com.mrgreaper.twistedmod2.reference;
 
+import com.mrgreaper.twistedmod2.entitys.TileEntityAlarm;
+import com.mrgreaper.twistedmod2.entitys.TileEntityBunnyFurnace;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
@@ -9,7 +11,6 @@ public class EntityInfo {
 
     public static void init() {
         GameRegistry.registerTileEntity(TileEntityBunnyFurnace.class, "BunnyFurnace");
-        GameRegistry.registerTileEntity(TileEntitySpeaker.class, "twistedSpeaker");
         GameRegistry.registerTileEntity(TileEntityAlarm.class, "twistedAlarm");
     }
 }

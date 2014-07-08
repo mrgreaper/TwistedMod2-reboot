@@ -1,6 +1,6 @@
 package com.mrgreaper.twistedmod2;
 
-import com.mrgreaper.twistedmod2.entitys.EntityInfo;
+import com.mrgreaper.twistedmod2.reference.EntityInfo;
 import com.mrgreaper.twistedmod2.handlers.*;
 import com.mrgreaper.twistedmod2.proxy.IProxy;
 import com.mrgreaper.twistedmod2.reference.*;

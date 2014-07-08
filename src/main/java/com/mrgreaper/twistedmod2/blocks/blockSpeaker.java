@@ -2,7 +2,6 @@ package com.mrgreaper.twistedmod2.blocks;
 
 import com.mrgreaper.twistedmod2.TwistedMod2;
 import com.mrgreaper.twistedmod2.entitys.TileEntityAlarm;
-import com.mrgreaper.twistedmod2.entitys.TileEntitySpeaker;
 import com.mrgreaper.twistedmod2.handlers.SoundHandler;
 import com.mrgreaper.twistedmod2.handlers.SoundHandlerLooped;
 import com.mrgreaper.twistedmod2.reference.Reference;
@@ -57,6 +56,7 @@ public class blockSpeaker extends BlockContainer {
         }
     }
 
+
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
         texture = new IIcon[metaBlocks.length];
@@ -65,6 +65,7 @@ public class blockSpeaker extends BlockContainer {
             texture[i] = iconRegister.registerIcon(Reference.MODID + ":" + "speaker-" + metaBlocks[i]);
         }
     }
+
 
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
@@ -80,6 +81,15 @@ public class blockSpeaker extends BlockContainer {
 
     public int damageDropped(int meta) {
         return meta;
+    }
+
+    @Override
+    public boolean hasTileEntity(int meta) {
+        if (meta == 1) {
+            return true;
+        }
+        //TODO somehow tell it what tile entity to create...hmmm need to look into tile entitys more, must of missed something
+        return false;
     }
 
     @Override

@@ -60,7 +60,7 @@ processResources
             from(sourceSets.main.resources.srcDirs) {
                 exclude 'mcmod.info'
             }
-            jar {
+            jar {//not sure if needed with gradle any more but better save then sorry
                 from zipTree("libs/chatter-bot-api.jar")
                 from zipTree("libs/cmulex.jar")
                 from zipTree("libs/en_us.jar")

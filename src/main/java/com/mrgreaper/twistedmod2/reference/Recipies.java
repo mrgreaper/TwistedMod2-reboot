@@ -84,23 +84,18 @@ public class Recipies {
         });
 
 
-
-
         GameRegistry.addRecipe(new ItemStack(ItemInfo.itemBunnyitePlate, 4), new Object[]{"IH", 'H', ItemInfo.itemBunnyiteIngot, 'I', new ItemStack(ItemInfo.itemTwistedHammer, 1, OreDictionary.WILDCARD_VALUE)});
         //ore wildcard allows us to ignore its durability
         GameRegistry.addRecipe(new ItemStack(ItemInfo.itemBunnyiteWasher, 4), new Object[]{"IH", 'H', ItemInfo.itemBunnyitePlate, 'I', new ItemStack(ItemInfo.itemBunnyitePunch, 1, OreDictionary.WILDCARD_VALUE)});
 
         //test shapeless recipie bellow
-//GameRegistry.addShapelessRecipe(new ItemStack(BlockInfo.oreBunnyite),new Object[]{ItemInfo.itemBunnyiteIngot, Blocks.cobblestone});
         GameRegistry.addShapelessRecipe(new ItemStack(ItemInfo.itemBunnyiteIngot, 9), new Object[]{BlockInfo.blockBunnyite});
-        //GameRegistry.addShapelessRecipe(new ItemStack(ItemInfo.itemBunnySwordHilt),ItemInfo.itemOrphanLeg);
-
         if (ConfigHandler.easyMode) {
             GameRegistry.addSmelting(ItemInfo.itemLivingBunny, new ItemStack(Items.nether_star), 0.1f);
         } else {
             GameRegistry.addSmelting(ItemInfo.itemLivingBunny, new ItemStack(Items.skull, 1, 1), 0.1f);
         }
-        GameRegistry.addSmelting(ItemInfo.itemOrphanLeg, new ItemStack(ItemInfo.itemBunnySwordHilt), 0.1f);
+        GameRegistry.addSmelting(ItemInfo.itemOrphanLeg, new ItemStack(ItemInfo.itemBunnySwordHilt), 0.1f);//TODO needs new texture
 
         if (ConfigHandler.leathSmelt) {
             GameRegistry.addSmelting(Items.rotten_flesh, new ItemStack(Items.leather), 0.1f);

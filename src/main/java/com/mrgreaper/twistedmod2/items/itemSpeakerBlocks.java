@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
  */
 public class itemSpeakerBlocks extends ItemBlock {
 
+
     final static String[] metaBlocks = new String[]{"notActive", "isActive"}; //this will be the different meta data blocks
 
     public itemSpeakerBlocks(Block block) {

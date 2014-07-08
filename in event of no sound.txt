@@ -1,1 +1,0 @@
---assetIndex 1.7.10 --assetsDir C:\Users\david\.gradle/caches/minecraft/assets

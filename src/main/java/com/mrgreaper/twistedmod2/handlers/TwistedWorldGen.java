@@ -35,8 +35,8 @@ public class TwistedWorldGen implements IWorldGenerator {
 
     private void generateSurface(World world, Random random, int x, int z) {
         //this.addOreSpawn( ORE NAME , world, random, x=block x position, z = block z position, max x,max z,max vain size, chance to spawn, min y , max y)
-        this.addOreSpawn(BlockInfo.oreBunnyite, world, random, x, z, 16, 16, 4 + random.nextInt(6), 25, 10, 40);
-        this.addOreSpawn(BlockInfo.oreCystalizedBlood, world, random, x, z, 16, 16, 4 + random.nextInt(6), 25, 10, 40);
+        this.addOreSpawn(BlockInfo.oreBunnyite, world, random, x, z, 16, 16, 4 + random.nextInt(6), ConfigHandler.bunnyiteOreChance, ConfigHandler.bunnyiteOreMinY, ConfigHandler.bunnyiteOreMaxY);
+        this.addOreSpawn(BlockInfo.oreCystalizedBlood, world, random, x, z, 16, 16, 4 + random.nextInt(6), ConfigHandler.bunnyBloodCrystalizedChance, ConfigHandler.bunnyBloodCrystalizedMinY, ConfigHandler.bunnyBloodCrystalizedMaxY);
 
     }
 

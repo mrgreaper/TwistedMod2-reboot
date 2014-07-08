@@ -54,12 +54,13 @@ public class TwistedEventHandler {
             //LogHelper.info("should only be seen on one side");
             old = current;
             if (itemstack != null) {//have to check its not null first or BLAM there goes the server when it trys to look up the item
-                //here we put in the sounds for on holding our items, these will only play client side to save possible use on griefing and because my sound handler is set up that way lol
+                //i could do these as arrays in the sound.json....that would make adding and removing new sounds much easier....hmmm
+                //TODO move these to arrays in sound.json ...possibly
 
 
                 if (itemstack.getItem() == FluidInfo.orphanTearsBucket && !event.player.worldObj.isRemote){
                     //SoundHandler.onEntityPlay("orphanCry", event.player.worldObj, event.player,1,1);
-                    SoundHandler.atWorldplace(event.player.worldObj,event.player.posX,event.player.posY,event.player.posZ,"orphanCry",1,1);
+                    SoundHandler.atWorldplace(event.player.worldObj, event.player.posX, event.player.posY, event.player.posZ, "orphanCry", 1, 1);//test other sound methods
                 }
                 if (itemstack.getItem() == ItemInfo.itemDeathOrb && !event.player.worldObj.isRemote){
                     SoundHandler.onEntityPlay("deathOrbStartup", event.player.worldObj, event.player, 1, 1);

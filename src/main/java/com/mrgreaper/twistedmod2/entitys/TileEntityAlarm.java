@@ -15,16 +15,16 @@ import net.minecraft.tileentity.TileEntity;
 public class TileEntityAlarm extends TileEntity {
 
     private boolean isPlaying = false;
-    private String soundName = "alarm-scifiA"; //set a default sound file...though i doubt we can change it
+    private String soundName = "alarm-airraidA"; //set a default sound file...though i doubt we can change it
 
 
     @Override
     public void updateEntity() {
 
-        LogHelper.info("ping ping ping ping ping ");
+        //LogHelper.info("ping ping ping ping ping ");//test code shows the tile entity is working
         if (!isPlaying) {
             //code to start the alarm
-            SoundHandlerLooped alarmSound = new SoundHandlerLooped(worldObj.getTileEntity(xCoord, yCoord, zCoord), soundName);
+            SoundHandlerLooped alarmSound = new SoundHandlerLooped(worldObj.getTileEntity(xCoord, yCoord, zCoord), "alarm-airraidA");
             Minecraft.getMinecraft().getSoundHandler().playSound(alarmSound);
             isPlaying = true;
         }

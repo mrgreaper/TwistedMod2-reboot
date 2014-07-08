@@ -20,6 +20,12 @@ public class ConfigHandler {
     public static boolean easyMode = true;
     public static boolean leathSmelt = true;
     public static boolean grassCraft = true;
+    public static int bunnyiteOreMinY = 10;
+    public static int bunnyiteOreMaxY = 40;
+    public static int bunnyiteOreChance = 25;//TODO make these rarer, set high for testing
+    public static int bunnyBloodCrystalizedMinY = 10;
+    public static int bunnyBloodCrystalizedMaxY = 40;
+    public static int bunnyBloodCrystalizedChance = 25;
 
 
     public static void init(File configFile) {
@@ -31,7 +37,6 @@ public class ConfigHandler {
 
 
     public static void loadConfiguration() {
-        //testValue = configuration.getBoolean("configValue", configuration.CATEGORY_GENERAL, false, "an example config value");
         deadBunnyBurnTime = configuration.getInt("Burn Time: Dead Bunny", configuration.CATEGORY_GENERAL, deadBunnyBurnTime, 1, 9000, "The burn time of a dead bunny between 1 and 9000(as fuel)");
         livingBunnyBurnTime = configuration.getInt("Burn Time: Living Bunny", configuration.CATEGORY_GENERAL, livingBunnyBurnTime, 1, 9000, "The burn time of a living bunny between 1 and 9000(as fuel)");
         bunnyiteToolsMaxUses = configuration.getInt("Bunnyite tools: max uses", configuration.CATEGORY_GENERAL, bunnyiteToolsMaxUses, 1, 9000, "The Maximum amount of times you can use a Bunnyite tool reference: wood = 59, stone = 131, iron = 250, diamond = 1561, gold = 32");
@@ -41,7 +46,12 @@ public class ConfigHandler {
         easyMode = configuration.getBoolean("Option: Easymode", configuration.CATEGORY_GENERAL, easyMode, "easy mode means when you burn errr, i mean cook,a bunny you get a nether star, on false you get a wither skull");
         leathSmelt = configuration.getBoolean("Option: Leather Smelting", configuration.CATEGORY_GENERAL, leathSmelt, "Can rotten flesh be smelted to leather?");
         grassCraft = configuration.getBoolean("Option: craftable grass", configuration.CATEGORY_GENERAL, grassCraft, "can you craft grass blocks with dirt and vines?");
-
+        bunnyiteOreMinY = configuration.getInt("Bunyite Ore: min height", configuration.CATEGORY_GENERAL, bunnyiteOreMinY, 1, 64, "the lowest height of bunyite ore can be found");
+        bunnyiteOreMaxY = configuration.getInt("Bunyite Ore: max height", configuration.CATEGORY_GENERAL, bunnyiteOreMaxY, 1, 64, "the highest height of bunyite ore can be found");
+        bunnyiteOreChance = configuration.getInt("Bunyite Ore: chance to spawn", configuration.CATEGORY_GENERAL, bunnyiteOreChance, 1, 64, "the chance of bunnyite ore spawning in world");
+        bunnyBloodCrystalizedMinY = configuration.getInt("Crystalized BB: min height", configuration.CATEGORY_GENERAL, bunnyBloodCrystalizedMinY, 1, 64, "the lowest height of Crystalized bunny blood can be found");
+        bunnyBloodCrystalizedMaxY = configuration.getInt("Crystalized BB: max height", configuration.CATEGORY_GENERAL, bunnyBloodCrystalizedMaxY, 1, 64, "the highest height of Crystalized bunny blood can be found");
+        bunnyBloodCrystalizedChance = configuration.getInt("Crystalized BB: chance to spawn", configuration.CATEGORY_GENERAL, bunnyBloodCrystalizedChance, 1, 64, "the chance of Crystalized bunny blood spawning in world");
 
 
         if (configuration.hasChanged()) {
