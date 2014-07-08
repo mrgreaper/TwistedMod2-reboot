@@ -45,7 +45,7 @@ public class TileEntitySpeaker extends TileEntity {
             alarmSound = new SoundHandlerLooped(worldObj.getTileEntity(xCoord, yCoord, zCoord), soundName);
             start = false;
             isPlaying = true;
-            if (!worldObj.isRemote) {
+            if (worldObj.isRemote) {
                 LogHelper.info("YES IS CLIENT SIDE");
                 // SpeechThreaded.speechSynth(1,0,60,10,"This is a test of the speech system");
                 Minecraft.getMinecraft().getSoundHandler().playSound(alarmSound);

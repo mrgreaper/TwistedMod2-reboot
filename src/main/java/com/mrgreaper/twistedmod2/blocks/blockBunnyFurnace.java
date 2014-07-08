@@ -119,6 +119,7 @@ public class blockBunnyFurnace extends BlockContainer {
         return true;
     }
 
+
     @Override
     public TileEntity createNewTileEntity(World world, int i) {
         return new TileEntityBunnyFurnace();

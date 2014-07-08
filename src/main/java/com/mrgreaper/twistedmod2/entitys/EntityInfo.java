@@ -10,5 +10,6 @@ public class EntityInfo {
     public static void init() {
         GameRegistry.registerTileEntity(TileEntityBunnyFurnace.class, "BunnyFurnace");
         GameRegistry.registerTileEntity(TileEntitySpeaker.class, "twistedSpeaker");
+        GameRegistry.registerTileEntity(TileEntityAlarm.class, "twistedAlarm");
     }
 }

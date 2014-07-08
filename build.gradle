@@ -60,4 +60,19 @@ processResources
             from(sourceSets.main.resources.srcDirs) {
                 exclude 'mcmod.info'
             }
+            jar {
+                from zipTree("libs/chatter-bot-api.jar")
+                from zipTree("libs/cmulex.jar")
+                from zipTree("libs/en_us.jar")
+                from zipTree("libs/freetts.jar")
+                from zipTree("libs/freetts-jsapi10.jar")
+                from zipTree("libs/mbrola.jar")
+                from zipTree("libs/cmu_us_kal.jar")
+            }
+            minecraft {
+                srgExtra "PK: com.sun.speech.freetts com.mrgreaper.twisted.lib"
+                srgExtra "PK: com.sun.speech.engine com.mrgreaper.twisted.lib"
+                srgExtra "PK: com.google.code.chatterbotapi com.mrgreaper.twisted.lib"
+                srgExtra "PK: de.dfki.lt.freetts.en.us com.mrgreaper.twisted.lib"
+            }
         }

@@ -17,6 +17,10 @@ public class ConfigHandler {
     public static int bunnyiteToolsHarvestLevel = 3;
     public static boolean botsPmChat = true;
     public static boolean botsUseSpeech = true;
+    public static boolean easyMode = true;
+    public static boolean leathSmelt = true;
+    public static boolean grassCraft = true;
+
 
     public static void init(File configFile) {
         if (configuration == null) {
@@ -34,6 +38,10 @@ public class ConfigHandler {
         bunnyiteToolsHarvestLevel = configuration.getInt("Bunnyite tools: Harvest level", configuration.CATEGORY_GENERAL, bunnyiteToolsHarvestLevel, 0, 10, "The level of material Bunnyite tools can harvest (3 = DIAMOND, 2 = IRON, 1 = STONE, 0 = IRON/GOLD) WARNING higher then 3 is for other mod support and may cause issues");
         botsPmChat = configuration.getBoolean("Bots: can be pm'd ", configuration.CATEGORY_GENERAL, botsPmChat, "Control if players can pm the bots or not");
         botsUseSpeech = configuration.getBoolean("Bots: use Speech ", configuration.CATEGORY_GENERAL, botsUseSpeech, "Can the bots use thier voice to communicate?");
+        easyMode = configuration.getBoolean("Option: Easymode", configuration.CATEGORY_GENERAL, easyMode, "easy mode means when you burn errr, i mean cook,a bunny you get a nether star, on false you get a wither skull");
+        leathSmelt = configuration.getBoolean("Option: Leather Smelting", configuration.CATEGORY_GENERAL, leathSmelt, "Can rotten flesh be smelted to leather?");
+        grassCraft = configuration.getBoolean("Option: craftable grass", configuration.CATEGORY_GENERAL, grassCraft, "can you craft grass blocks with dirt and vines?");
+
 
 
         if (configuration.hasChanged()) {

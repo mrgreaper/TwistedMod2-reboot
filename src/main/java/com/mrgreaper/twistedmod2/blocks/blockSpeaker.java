@@ -1,6 +1,7 @@
 package com.mrgreaper.twistedmod2.blocks;
 
 import com.mrgreaper.twistedmod2.TwistedMod2;
+import com.mrgreaper.twistedmod2.entitys.TileEntityAlarm;
 import com.mrgreaper.twistedmod2.entitys.TileEntitySpeaker;
 import com.mrgreaper.twistedmod2.handlers.SoundHandler;
 import com.mrgreaper.twistedmod2.handlers.SoundHandlerLooped;
@@ -14,10 +15,15 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.ISound;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 
 /**
@@ -25,57 +31,62 @@ import net.minecraft.world.World;
  */
 public class blockSpeaker extends BlockContainer {
 
-    private boolean isOn;
+    @SideOnly(Side.CLIENT)
+    private IIcon[] texture;
+    final static String[] metaBlocks = new String[]{"notActive", "isActive"}; //this will be the different meta data blocks
 
-    //@SideOnly(Side.SERVER)
-    public IIcon activeIcon;
-
-
-    public blockSpeaker(Material material) {
-        super(material);
-
+    public blockSpeaker() {
+        super(Material.iron);
         this.setHardness(3.0f);
         this.setResistance(5.0f);
         this.setStepSound(soundTypeMetal);
         this.setCreativeTab(TwistedMod2.TwistedModTab);
     }
 
-    public TileEntity createNewTileEntity(World world, int i) {
-        return new TileEntitySpeaker();
-    }
 
-
+    @Override
     public void onNeighborBlockChange(World world, int xCord, int yCord, int zCord, Block blockID) {
-        LogHelper.info(this.isOn);
-        if (!world.isRemote) {
-            if (this.isOn && !world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) {
-                world.scheduleBlockUpdate(xCord, yCord, zCord, this, 4); //hmmm not sure what the 4 is
-                isOn = false;
-                TileEntitySpeaker spealer2 = (TileEntitySpeaker) world.getTileEntity(xCord, yCord, zCord);
-                spealer2.setShouldStop(true);
-            } else if (!this.isOn && world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) {
-                isOn = true;
-                TileEntitySpeaker spealer2 = (TileEntitySpeaker) world.getTileEntity(xCord, yCord, zCord);
-                spealer2.activateSpeaker(true, "alarm-genericA");
+        if (!world.isRemote && !world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) {
 
+            world.setBlockMetadataWithNotify(xCord, yCord, zCord, 0, 3);
+            world.removeTileEntity(xCord, yCord, zCord);
 
-            }
+        } else if (!world.isRemote && world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) {
+            world.setBlockMetadataWithNotify(xCord, yCord, zCord, 1, 3);
+
         }
     }
 
-
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon(Reference.MODID + ":" + this.getUnlocalizedName().substring(5));
-        this.activeIcon = iconRegister.registerIcon(Reference.MODID + ":" + this.getUnlocalizedName().substring(5) + "_active");
+        texture = new IIcon[metaBlocks.length];
+
+        for (int i = 0; i < metaBlocks.length; i++) {
+            texture[i] = iconRegister.registerIcon(Reference.MODID + ":" + "speaker-" + metaBlocks[i]);
+        }
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
+        for (int i = 0; i < metaBlocks.length; i++) {
+            list.add(new ItemStack(block, 1, i));
+        }
+    }
+
+    @SideOnly(Side.CLIENT)
+    public IIcon getIcon(int side, int meta) {
+        return texture[meta];
+    }
+
+    public int damageDropped(int meta) {
+        return meta;
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side) {
-
-        TileEntitySpeaker speaker = (TileEntitySpeaker) world.getTileEntity(x, y, z);
-
-        return speaker.isActived() ? activeIcon : blockIcon;
+    public TileEntity createNewTileEntity(World world, int metadata) {
+        if (metadata == 1) {
+            return new TileEntityAlarm();
+        }
+        return null;
     }
 }
