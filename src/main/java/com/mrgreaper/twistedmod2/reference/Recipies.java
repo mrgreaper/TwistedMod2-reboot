@@ -96,6 +96,7 @@ public class Recipies {
             GameRegistry.addSmelting(ItemInfo.itemLivingBunny, new ItemStack(Items.skull, 1, 1), 0.1f);
         }
         GameRegistry.addSmelting(ItemInfo.itemOrphanLeg, new ItemStack(ItemInfo.itemBunnySwordHilt), 0.1f);//TODO needs new texture
+        GameRegistry.addSmelting(BlockInfo.oreBunnyite, new ItemStack(ItemInfo.itemBunnyiteIngot), 0);
 
         if (ConfigHandler.leathSmelt) {
             GameRegistry.addSmelting(Items.rotten_flesh, new ItemStack(Items.leather), 0.1f);

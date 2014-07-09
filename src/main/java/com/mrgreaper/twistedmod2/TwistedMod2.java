@@ -69,7 +69,6 @@ public class TwistedMod2 {
         FMLCommonHandler.instance().bus().register(new CraftingHandler()); //for our durable items
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         MinecraftForge.EVENT_BUS.register(new DropsHandler());//register our drop handler example
-        Smelting.init();
         EntityInfo.init();
 
         GameRegistry.registerFuelHandler(new TwistedFuel());

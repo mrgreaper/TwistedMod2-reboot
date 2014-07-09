@@ -1,26 +1,21 @@
 package com.mrgreaper.twistedmod2.handlers;
 
+import com.mrgreaper.twistedmod2.entitys.TileEntitySpeaker;
 import com.mrgreaper.twistedmod2.reference.Reference;
 import com.mrgreaper.twistedmod2.utility.LogHelper;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.audio.ITickableSound;
 import net.minecraft.client.audio.MovingSound;
-import net.minecraft.client.audio.PositionedSound;
-import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 
 /**
- * Created by david on 06/07/2014.
+ * Created by david on 09/07/2014.
  */
-@SideOnly(Side.CLIENT)
-public class SoundHandlerLooped extends MovingSound {
+public class AlarmHandler2 extends MovingSound {
     private final TileEntity tileentity;
+    private TileEntitySpeaker tileSpeaker;
 
 
-    public SoundHandlerLooped(TileEntity tile, String Soundname) {
+    public AlarmHandler2(TileEntity tile, String Soundname) {
         super(new ResourceLocation(Reference.MODID + ":" + Soundname));
         this.tileentity = tile;
         this.repeat = true;
@@ -28,12 +23,13 @@ public class SoundHandlerLooped extends MovingSound {
         this.xPosF = tileentity.xCoord;
         this.yPosF = tileentity.yCoord;
         this.zPosF = tileentity.zCoord;
+        tileSpeaker = (TileEntitySpeaker) tileentity;
     }
 
 
     public void update() {
         LogHelper.info("i should be making noise oh and volume is " + volume);
-        if (this.tileentity.isInvalid()) {
+        if (tileSpeaker.isShouldStop()) {
             LogHelper.info("ok ill shut up now");
             this.donePlaying = true;
         }
@@ -44,4 +40,3 @@ public class SoundHandlerLooped extends MovingSound {
         return this.donePlaying;
     }
 }
-
