@@ -18,7 +18,7 @@ import net.minecraft.world.World;
  */
 public class blockAlarmSpeaker extends BlockContainer {
 
-    private TileEntitySpeaker tile;
+    private TileEntitySpeaker tile; //we will need this for checking booleans and methods that are unique to TileEntitySpeaker
 
 
     public blockAlarmSpeaker(Material material) {
@@ -37,18 +37,18 @@ public class blockAlarmSpeaker extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int i) {
-        return new TileEntitySpeaker();
+        return new TileEntitySpeaker(); //creating the tile entity
     }
 
     @Override
     public void onNeighborBlockChange(World world, int xCord, int yCord, int zCord, Block blockID) {
-        if (!world.isRemote && !world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) {
-            tile = (TileEntitySpeaker) world.getTileEntity(xCord, yCord, zCord);
-            tile.setShouldStop(true);
+        if (!world.isRemote && !world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) { //ok so if we are server side and we are NOT getting power but there has been a block update
+            tile = (TileEntitySpeaker) world.getTileEntity(xCord, yCord, zCord); //we make sure tile is the TileEntity that is located at our blocks location
+            tile.setShouldStop(true); //we tell the tileEntitySpeaker that we want shouldStop to be true
         }
-        if (!world.isRemote && world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) {
-            tile = (TileEntitySpeaker) world.getTileEntity(xCord, yCord, zCord);
-            tile.setShouldStart(true);
+        if (!world.isRemote && world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) { //we check to see if we are server side and if the block is getting powered and if theres been a block update around us
+            tile = (TileEntitySpeaker) world.getTileEntity(xCord, yCord, zCord); //we make sure that tile is the TileEntitySpeaker thats at our blocks location (ok were not checking it is a TileEntitySpeaker, more casting it as...should be though unless something went wrong)
+            tile.setShouldStart(true); //we tell the tileEntitySpeaker that we want shouldStart to be true
         }
     }
 }
