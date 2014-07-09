@@ -1,8 +1,6 @@
 package com.mrgreaper.twistedmod2.entitys;
 
 import com.mrgreaper.twistedmod2.TwistedMod2;
-import com.mrgreaper.twistedmod2.handlers.AlarmHandler2;
-import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
@@ -30,8 +28,9 @@ public class TileEntitySpeaker extends TileEntity {
             // AlarmHandler2 alarm2 = new AlarmHandler2(worldObj.getTileEntity(xCoord, yCoord, zCoord), "alarm-airraidA"); //create a new instance of the alarmhandler2
 
             //Minecraft.getMinecraft().getSoundHandler().playSound(alarm2); //make some noise
-
-            TwistedMod2.proxy.alarmSound(worldObj.getTileEntity(xCoord, yCoord, zCoord), soundName);
+            if (this.worldObj.isRemote) {
+                TwistedMod2.proxy.alarmSound(worldObj.getTileEntity(xCoord, yCoord, zCoord), soundName);
+            }
         }
     }
 

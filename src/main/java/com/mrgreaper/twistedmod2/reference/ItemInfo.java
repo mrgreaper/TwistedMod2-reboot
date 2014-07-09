@@ -1,6 +1,5 @@
 package com.mrgreaper.twistedmod2.reference;
 
-import com.mrgreaper.twistedmod2.Fluids.OrphanTears;
 import com.mrgreaper.twistedmod2.handlers.materials;
 import com.mrgreaper.twistedmod2.items.*;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -28,6 +27,7 @@ public class ItemInfo {
     public static Item itemBunnyiteAxe = new itemBunnyiteAxe(materials.BunnyiteMaterial).setUnlocalizedName("BunnyiteAxe");
     public static Item itemBunnyiteSpade = new itemBunnyiteSpade(materials.BunnyiteMaterial).setUnlocalizedName("BunnyiteSpade");
     public static Item itemBloodCrystal = new twistedItems().setUnlocalizedName("TwistedBloodCrystal");
+    public static Item itemSecurityId = new itemSecurityId().setUnlocalizedName("SecurityId");
 
 
 
@@ -49,6 +49,7 @@ public class ItemInfo {
         GameRegistry.registerItem(itemBunnyitePlate, "BunnyitePlate");
         GameRegistry.registerItem(itemBunnyitePickaxe, "BunnyitePickaxe");
         GameRegistry.registerItem(itemBunnyiteAxe, "BunnyiteAxe");
+        GameRegistry.registerItem(itemSecurityId, "SecurityId");
 
     }
 }
