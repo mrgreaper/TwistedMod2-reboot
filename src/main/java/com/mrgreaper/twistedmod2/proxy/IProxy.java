@@ -5,4 +5,5 @@ package com.mrgreaper.twistedmod2.proxy;
  */
 public interface IProxy {
 
+
 }

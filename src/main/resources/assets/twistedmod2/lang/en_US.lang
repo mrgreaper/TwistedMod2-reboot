@@ -12,6 +12,7 @@ tile.orphantears.name=Orphan Tears
 tile.bunnyblood.name=Bunny Blood
 tile.Speaker.notActive.name=Speaker Off
 tile.Speaker.isActive.name=Speaker on
+tile.blockAlarmSpeaker.name=Alarmer
 
 item.DeadBunny.name=Dead Bunny
 item.BunnyiteIngot.name=Bunnyite Ingot

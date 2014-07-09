@@ -1,7 +1,9 @@
 package com.mrgreaper.twistedmod2.gui;
 
 import com.mrgreaper.twistedmod2.reference.Reference;
+import com.mrgreaper.twistedmod2.utility.LogHelper;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -47,6 +49,21 @@ public class GuiLivingBunny extends GuiScreen {
     @Override
     public boolean doesGuiPauseGame() {
         return false; //dont pause the game
+    }
+
+    public void initGui() { //this is where we add stuff to the gui
+        int posX = (this.width - xSizeOfTexture) / 2;
+        int posY = (this.height - ySizeOfTexture) / 2;
+
+        this.buttonList.add(new GuiButton(0, posX + 40, posY + 40, 100, 20, "test button"));// creates the button (id,pos x, pos y, width?,height?,button test)
+
+    }
+
+    public void actionPerformed(GuiButton button) {//here we perform the action when the button is pushed referencing its id
+        switch (button.id) {
+            case 0:
+                LogHelper.info("button was pressed");
+        }
     }
 
 

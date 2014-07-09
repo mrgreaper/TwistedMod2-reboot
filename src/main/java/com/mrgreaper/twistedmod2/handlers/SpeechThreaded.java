@@ -3,6 +3,8 @@ package com.mrgreaper.twistedmod2.handlers;
 import com.mrgreaper.twistedmod2.utility.LogHelper;
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * Created by david on 23/06/2014.
@@ -14,6 +16,7 @@ public class SpeechThreaded implements Runnable {
     private static float vPitchRange;
     private static float vPitchShift;
     private static String vSentence;
+
 
     public static void speechSynth(double vVoice2, float vPitch2, float vPitchRange2, float vPitchShift2, String vSentence2) {
         vVoice = vVoice2;
@@ -29,6 +32,7 @@ public class SpeechThreaded implements Runnable {
         t1.start();
 
     }
+
 
     @Override
     public void run() {

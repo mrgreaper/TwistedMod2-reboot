@@ -23,9 +23,11 @@ public class TileEntitySpeaker extends TileEntity {
             shouldStart = false; //set should start to false to stop us trying to play more
             shouldStop = false; //this is so when we have played and then stopped we can play again...yeah that was a bugger to solve!
             isPlaying = true; //we tell it we are now playing
+
+            //TODO need to use a proxy for this....ahhhh crap
             // AlarmHandler alarm = new AlarmHandler(TileEntitySpeaker.this, soundName,volume,this);
-            AlarmHandler2 alarm2 = new AlarmHandler2(worldObj.getTileEntity(xCoord, yCoord, zCoord), "alarm-airraidA"); //create a new instance of the alarmhandler2
-            Minecraft.getMinecraft().getSoundHandler().playSound(alarm2); //make some noise
+            // AlarmHandler2 alarm2 = new AlarmHandler2(worldObj.getTileEntity(xCoord, yCoord, zCoord), "alarm-airraidA"); //create a new instance of the alarmhandler2
+            //Minecraft.getMinecraft().getSoundHandler().playSound(alarm2); //make some noise
         }
     }
 
