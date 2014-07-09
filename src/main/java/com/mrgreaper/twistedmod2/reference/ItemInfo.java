@@ -2,10 +2,7 @@ package com.mrgreaper.twistedmod2.reference;
 
 import com.mrgreaper.twistedmod2.Fluids.OrphanTears;
 import com.mrgreaper.twistedmod2.handlers.materials;
-import com.mrgreaper.twistedmod2.items.bucketOrphanTears;
-import com.mrgreaper.twistedmod2.items.itemBunnyiteAxe;
-import com.mrgreaper.twistedmod2.items.itemBunnyiteSpade;
-import com.mrgreaper.twistedmod2.items.twistedItems;
+import com.mrgreaper.twistedmod2.items.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
@@ -16,7 +13,7 @@ public class ItemInfo {
     //rather then clutter up my main java file with item info lets pool it all here
     public static Item itemDeadBunny = new twistedItems().setUnlocalizedName("DeadBunny");
     public static Item itemBunnyiteIngot = new twistedItems().setUnlocalizedName("BunnyiteIngot");
-    public static Item itemLivingBunny = new twistedItems().setUnlocalizedName("LivingBunny");
+    public static Item itemLivingBunny = new itemLivingBunny().setUnlocalizedName("LivingBunny");
     public static Item itemBunnyiteWasher = new twistedItems().setUnlocalizedName("BunnyiteWasher");
     public static Item itemRedballoon = new twistedItems().setUnlocalizedName("RedBalloon");
     public static Item itemDeathOrb = new twistedItems().setUnlocalizedName("DeathOrb");
@@ -24,10 +21,10 @@ public class ItemInfo {
     public static Item itemBunnySwordHilt = new twistedItems().setUnlocalizedName("BunnySwordHilt");
     public static Item itemBunnySword = new com.mrgreaper.twistedmod2.items.itemBunnySword(materials.BunnyiteMaterial).setUnlocalizedName("BunnySword");
     public static Item itemEnergizedBunny = new twistedItems().setUnlocalizedName("EnergizedBunny");
-    public static Item itemTwistedHammer = new com.mrgreaper.twistedmod2.items.itemTwistedHammer().setUnlocalizedName("TwistedHammer");
-    public static Item itemBunnyitePunch = new com.mrgreaper.twistedmod2.items.itemBunnyitePunch().setUnlocalizedName("BunnyitePunch");
+    public static Item itemTwistedHammer = new itemTwistedHammer().setUnlocalizedName("TwistedHammer");
+    public static Item itemBunnyitePunch = new itemBunnyitePunch().setUnlocalizedName("BunnyitePunch");
     public static Item itemBunnyitePlate = new twistedItems().setUnlocalizedName("BunnyitePlate");
-    public static Item itemBunnyitePickaxe = new com.mrgreaper.twistedmod2.items.itemBunnyitePickaxe(materials.BunnyiteMaterial).setUnlocalizedName("BunnyitePickaxe");
+    public static Item itemBunnyitePickaxe = new itemBunnyitePickaxe(materials.BunnyiteMaterial).setUnlocalizedName("BunnyitePickaxe");
     public static Item itemBunnyiteAxe = new itemBunnyiteAxe(materials.BunnyiteMaterial).setUnlocalizedName("BunnyiteAxe");
     public static Item itemBunnyiteSpade = new itemBunnyiteSpade(materials.BunnyiteMaterial).setUnlocalizedName("BunnyiteSpade");
     public static Item itemBloodCrystal = new twistedItems().setUnlocalizedName("TwistedBloodCrystal");

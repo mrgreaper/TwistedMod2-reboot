@@ -1,9 +1,8 @@
 package com.mrgreaper.twistedmod2.entitys;
 
-import com.mrgreaper.twistedmod2.handlers.AlarmHandler;
 import com.mrgreaper.twistedmod2.handlers.AlarmHandler2;
-import com.mrgreaper.twistedmod2.handlers.SoundHandlerLooped;
 import net.minecraft.client.Minecraft;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
 /**
@@ -28,7 +27,6 @@ public class TileEntitySpeaker extends TileEntity {
             AlarmHandler2 alarm2 = new AlarmHandler2(worldObj.getTileEntity(xCoord, yCoord, zCoord), "alarm-airraidA"); //create a new instance of the alarmhandler2
             Minecraft.getMinecraft().getSoundHandler().playSound(alarm2); //make some noise
         }
-
     }
 
 
@@ -52,5 +50,26 @@ public class TileEntitySpeaker extends TileEntity {
     }
 
 
-    //here i need to build my gui and setup the nbt tags to allow persistence
+    @Override
+    public void readFromNBT(NBTTagCompound nbt) {
+        super.readFromNBT(nbt);
+
+        soundName = nbt.getString("sndName");
+        shouldStop = nbt.getBoolean("shouldStop");
+        shouldStart = nbt.getBoolean("shouldStart");
+        volume = nbt.getFloat("vol");
+
+    }
+
+    @Override
+    public void writeToNBT(NBTTagCompound nbt) {
+        super.writeToNBT(nbt);
+
+        nbt.setString("sndName", soundName);
+        nbt.setBoolean("shouldStop", shouldStop);
+        nbt.setBoolean("shouldStart", shouldStart);
+        nbt.setFloat("vol", volume);
+        //we allow isPlaying to reset itself to false...i possibly dont need to save some of the others lol
+    }
+
 }

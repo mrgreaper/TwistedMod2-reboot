@@ -15,7 +15,8 @@ import net.minecraft.block.material.Material;
 public class BlockInfo {
     //same as iteminfo lets reduce clutter of the main class
 
-    public static final int guiIDBunnyFurnace = 0;
+    public static final int guiIDBunnyFurnace = 1;
+    public static final int guiIDLivingBunny = 0;
     public static Block blockSpeaker = new com.mrgreaper.twistedmod2.blocks.blockSpeaker().setBlockName("Speaker");
     public static Block oreBunnyite = new oreBlock(Material.rock).setBlockName("oreBunnyite");
     public static Block blockBunnyite = new com.mrgreaper.twistedmod2.blocks.blockBunnyite(Material.iron).setBlockName("blockBunnyite");
