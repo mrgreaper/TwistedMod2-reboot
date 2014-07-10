@@ -68,9 +68,7 @@ public class blockAlarmSpeaker extends BlockContainer {
             LogHelper.info("so you wanna kill sound and your on the client side...ok");
             tile = (TileEntitySpeaker) world.getTileEntity(x, y, z);
             tile.setShouldStop(true);
-
         }
-
         return true;
     }
 }

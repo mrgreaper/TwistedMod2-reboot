@@ -27,8 +27,7 @@ public class ItemInfo {
     public static Item itemBunnyiteAxe = new itemBunnyiteAxe(materials.BunnyiteMaterial).setUnlocalizedName("BunnyiteAxe");
     public static Item itemBunnyiteSpade = new itemBunnyiteSpade(materials.BunnyiteMaterial).setUnlocalizedName("BunnyiteSpade");
     public static Item itemBloodCrystal = new twistedItems().setUnlocalizedName("TwistedBloodCrystal");
-    public static Item itemSecurityId = new itemSecurityId().setUnlocalizedName("SecurityId");
-
+    public static Item itemSecurityId = new itemSecurityId().setUnlocalizedName("SecurityId").setMaxStackSize(1);
 
 
     public static void init() {

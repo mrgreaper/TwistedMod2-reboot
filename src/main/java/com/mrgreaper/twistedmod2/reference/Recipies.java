@@ -4,7 +4,6 @@ import com.mrgreaper.twistedmod2.handlers.ConfigHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -81,6 +80,13 @@ public class Recipies {
                 " S ",
                 " S ",
                 'I', ItemInfo.itemBunnyiteIngot, 'S', Items.stick
+        });
+
+        GameRegistry.addRecipe(new ItemStack(ItemInfo.itemSecurityId), new Object[]{
+                "ppp",
+                "pip",
+                "ppp",
+                'i', ItemInfo.itemBunnyiteIngot, 'p', Items.paper
         });
 
 

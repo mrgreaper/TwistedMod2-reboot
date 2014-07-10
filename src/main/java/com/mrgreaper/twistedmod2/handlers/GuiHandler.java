@@ -5,6 +5,7 @@ import com.mrgreaper.twistedmod2.container.ContainerLivingBunny;
 import com.mrgreaper.twistedmod2.entitys.TileEntityBunnyFurnace;
 import com.mrgreaper.twistedmod2.gui.GuiBunnyFurnace;
 import com.mrgreaper.twistedmod2.gui.GuiLivingBunny;
+import com.mrgreaper.twistedmod2.gui.guiSecurityIdCard;
 import com.mrgreaper.twistedmod2.reference.BlockInfo;
 import com.mrgreaper.twistedmod2.utility.LogHelper;
 import cpw.mods.fml.common.network.IGuiHandler;
@@ -31,6 +32,8 @@ public class GuiHandler implements IGuiHandler {
             case BlockInfo.guiIDLivingBunny:
                 LogHelper.info("gui choice....living bunny");
                 return new ContainerLivingBunny(player);
+            case BlockInfo.guiIDSecurityId:
+                return new ContainerLivingBunny(player);
         }
         return null;
     }
@@ -46,6 +49,8 @@ public class GuiHandler implements IGuiHandler {
                 return null;
             case BlockInfo.guiIDLivingBunny:
                 return new GuiLivingBunny(player);
+            case BlockInfo.guiIDSecurityId:
+                return new guiSecurityIdCard(player, player.getCurrentEquippedItem().stackTagCompound.getString("user"), player.getCurrentEquippedItem().stackTagCompound.getString("accessCode"));
         }
         return null;
     }
