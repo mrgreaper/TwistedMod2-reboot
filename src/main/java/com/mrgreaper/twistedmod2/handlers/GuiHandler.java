@@ -50,7 +50,7 @@ public class GuiHandler implements IGuiHandler {
             case BlockInfo.guiIDLivingBunny:
                 return new GuiLivingBunny(player);
             case BlockInfo.guiIDSecurityId:
-                return new guiSecurityIdCard(player, player.getCurrentEquippedItem().stackTagCompound.getString("user"), player.getCurrentEquippedItem().stackTagCompound.getString("accessCode"));
+                return new guiSecurityIdCard(player, player.getCurrentEquippedItem());
         }
         return null;
     }

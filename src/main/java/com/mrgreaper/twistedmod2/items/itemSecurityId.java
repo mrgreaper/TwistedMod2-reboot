@@ -72,6 +72,8 @@ public class itemSecurityId extends twistedItems {
         itemStack.stackTagCompound = new NBTTagCompound();
         itemStack.stackTagCompound.setString("user", player.getDisplayName()); //we get the username and set it as the string tag "user"
         itemStack.stackTagCompound.setString("accessCode", ReaperHelper.securityCode());//ok lets get a REALLY big number lol
+        //itemStack.stackTagCompound.setString("uuid",player.getUniqueID().toString());//why bind it to a string? why not an int? well what if they start having letters too? hmmmm?
+        //LogHelper.info(player.getUniqueID().toString());
     }
 
 
