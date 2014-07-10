@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5804aae9-67d2-4120-a647-47ec52346818" name="Default" comment="alarm block DONE ...for now">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/container/ContainerIdCard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/handlers/ReaperHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/gui/guiSecurityIdCard.java" />
-      <change type="DELETED" beforePath="C:\minecraftDev\projects\1.7.10 new\TwistedMod2-reboot\src\main\resources\assets\twistedmod2\textures\items\idCard.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/reference/BlockInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/reference/BlockInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/handlers/GuiHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/handlers/GuiHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/reference/ItemInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/reference/ItemInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/reference/Recipies.java" afterPath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/reference/Recipies.java" />
+    <list default="true" id="5804aae9-67d2-4120-a647-47ec52346818" name="Default" comment="oops forgot to add the textures to github">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwistedMod2-reboot.iws" afterPath="$PROJECT_DIR$/TwistedMod2-reboot.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/blocks/blockAlarmSpeaker.java" afterPath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/blocks/blockAlarmSpeaker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/twistedmod2/lang/en_US.lang" afterPath="$PROJECT_DIR$/src/main/resources/assets/twistedmod2/lang/en_US.lang" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/items/itemSecurityId.java" afterPath="$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/items/itemSecurityId.java" />
     </list>
     <ignored path="TwistedMod2-reboot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -112,11 +102,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="itemSecurityId.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="itemSecurityId.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/items/itemSecurityId.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="658" max-vertical-offset="1479">
-              <caret line="62" column="159" selection-start-line="62" selection-start-column="159" selection-end-line="62" selection-end-column="159" />
+            <state vertical-scroll-proportion="0.36377245" vertical-offset="335" max-vertical-offset="1411">
+              <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,15 +136,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guiSecurityIdCard.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="guiSecurityIdCard.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/gui/guiSecurityIdCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66167665" vertical-offset="340" max-vertical-offset="1207">
-              <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
+              <caret line="60" column="1" selection-start-line="13" selection-start-column="0" selection-end-line="60" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2375#2376#0" expanded="true" />
-                <element signature="e#2425#2426#0" expanded="true" />
+                <element signature="e#2324#2325#0" expanded="true" />
+                <element signature="e#2374#2375#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -203,8 +193,8 @@
       <file leaf-file-name="GuiHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/handlers/GuiHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="884">
-              <caret line="52" column="189" selection-start-line="52" selection-start-column="189" selection-end-line="52" selection-end-column="189" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -525,6 +515,104 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="twistedmod2" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwistedMod2-reboot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwistedMod2-reboot" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twistedmod2" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="textures" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="items" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwistedMod2-reboot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwistedMod2-reboot" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twistedmod2" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="textures" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwistedMod2-reboot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwistedMod2-reboot" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twistedmod2" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="textures" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1211,7 +1299,15 @@
       <created>1404950653799</created>
       <updated>1404950653799</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="added ID cards with unique saved code that can only be seen by the username..also stored in the card which display on mouseover and on their own gui.....why? because..ummm because Bunnys need IDs damn it!">
+      <created>1404963451559</created>
+      <updated>1404963451559</updated>
+    </task>
+    <task id="LOCAL-00028" summary="oops forgot to add the textures to github">
+      <created>1404963524652</created>
+      <updated>1404963524652</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1307,8 +1403,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="adding gradle to git to make it easier on multiple pcs" />
-    <MESSAGE value="imported changes from source made before the folder rejig...perhaps i should not do this when sleepy!" />
     <MESSAGE value="all code no play make mrg go crazy crazy" />
     <MESSAGE value="custom furnace done..ish...need neale gaming's help for some minor gui issues&#10;&#10;ok so there not so minor lol" />
     <MESSAGE value="Some tidying up of item and block info classes, should make for less typing later and easier dealing with :) &#10;plus lets face it thier references not items or blocks so lets put them in the right draw." />
@@ -1332,7 +1426,9 @@
     <MESSAGE value="on dedicated servers im getting no sound...but im not crashing it....yay for small victorys" />
     <MESSAGE value="i hate this block i hate this block i hate this block" />
     <MESSAGE value="alarm block DONE ...for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="alarm block DONE ...for now" />
+    <MESSAGE value="added ID cards with unique saved code that can only be seen by the username..also stored in the card which display on mouseover and on their own gui.....why? because..ummm because Bunnys need IDs damn it!" />
+    <MESSAGE value="oops forgot to add the textures to github" />
+    <option name="LAST_COMMIT_MESSAGE" value="oops forgot to add the textures to github" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1668,14 +1764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/handlers/GuiHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="884">
-          <caret line="52" column="189" selection-start-line="52" selection-start-column="189" selection-end-line="52" selection-end-column="189" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/handlers/ReaperHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
@@ -1697,16 +1785,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="53" max-vertical-offset="646">
           <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/items/itemSecurityId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="658" max-vertical-offset="1479">
-          <caret line="62" column="159" selection-start-line="62" selection-start-column="159" selection-end-line="62" selection-end-column="159" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1736,14 +1814,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/handlers/GuiHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/gui/guiSecurityIdCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66167665" vertical-offset="340" max-vertical-offset="1207">
-          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
+          <caret line="60" column="1" selection-start-line="13" selection-start-column="0" selection-end-line="60" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2375#2376#0" expanded="true" />
-            <element signature="e#2425#2426#0" expanded="true" />
+            <element signature="e#2324#2325#0" expanded="true" />
+            <element signature="e#2374#2375#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrgreaper/twistedmod2/items/itemSecurityId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36377245" vertical-offset="335" max-vertical-offset="1411">
+          <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
