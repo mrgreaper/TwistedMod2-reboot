@@ -59,6 +59,7 @@ public class itemSecurityId extends twistedItems {
             if (itemStack.stackTagCompound != null) {
                 FMLNetworkHandler.openGui(player, TwistedMod2.instance, BlockInfo.guiIDSecurityId, world, (int) player.posX, (int) player.posY, (int) player.posZ);
 
+
             } else {
                 LogHelper.info("no tag compound lets make one");
                 makeNBT(itemStack, player);
