@@ -42,9 +42,8 @@ public class blockAlarmSpeaker extends BlockContainer {
 
     @Override
     public void onNeighborBlockChange(World world, int xCord, int yCord, int zCord, Block blockID) {
-        if (!world.isRemote && !world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) { //ok so if we are server side and we are NOT getting power but there has been a block update
-            tile = (TileEntitySpeaker) world.getTileEntity(xCord, yCord, zCord); //we make sure tile is the TileEntity that is located at our blocks location
-            tile.setShouldStop(true); //we tell the tileEntitySpeaker that we want shouldStop to be true
+        if (!world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) { //ok so if we are server side and we are NOT getting power but there has been a block update
+            world.addBlockEvent(xCord, yCord, zCord, this, 1, 0);
         }
         if (world.isBlockIndirectlyGettingPowered(xCord, yCord, zCord)) { //we check to see if we are server side and if the block is getting powered and if theres been a block update around us
             tile = (TileEntitySpeaker) world.getTileEntity(xCord, yCord, zCord); //we make sure that tile is the TileEntitySpeaker thats at our blocks location (ok were not checking it is a TileEntitySpeaker, more casting it as...should be though unless something went wrong)
@@ -65,7 +64,14 @@ public class blockAlarmSpeaker extends BlockContainer {
         if (!world.isRemote && eventId == 0) {
             LogHelper.info("and im on the server side but i noticed that the block was updated and that the id was 0 ...i wont tell the sound to start though");
         }
-        return false;
+        if (world.isRemote && eventId == 1) {
+            LogHelper.info("so you wanna kill sound and your on the client side...ok");
+            tile = (TileEntitySpeaker) world.getTileEntity(x, y, z);
+            tile.setShouldStop(true);
+
+        }
+
+        return true;
     }
 }
 
