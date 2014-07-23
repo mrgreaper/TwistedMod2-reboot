@@ -3,6 +3,7 @@ package com.mrgreaper.twistedmod2.reference;
 import com.mrgreaper.twistedmod2.TwistedMod2;
 import com.mrgreaper.twistedmod2.blocks.blockAlarmSpeaker;
 import com.mrgreaper.twistedmod2.blocks.blockBunnyFurnace;
+import com.mrgreaper.twistedmod2.blocks.blockSpeaky;
 import com.mrgreaper.twistedmod2.blocks.oreBlock;
 import com.mrgreaper.twistedmod2.items.itemSpeakerBlocks;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -25,6 +26,7 @@ public class BlockInfo {
     public static Block blockBunnyFurnaceIdle = new blockBunnyFurnace(false, Material.iron).setBlockName("BunnyFurnaceIdle").setCreativeTab(TwistedMod2.TwistedModTab).setHardness(3.5F);
     public static Block blockBunnyFurnaceActive = new blockBunnyFurnace(false, Material.iron).setBlockName("BunnyFurnaceActive").setCreativeTab(TwistedMod2.TwistedModTab).setHardness(3.5F).setLightLevel(2f);
     public static Block blockAlarmSpeaker = new blockAlarmSpeaker(Material.iron).setBlockName("blockAlarmSpeaker").setCreativeTab(TwistedMod2.TwistedModTab);
+    public static Block blockSpeaky = new blockSpeaky(Material.iron).setBlockName("blcokSpeaky").setCreativeTab(TwistedMod2.TwistedModTab);
 
     public static void init() {
         GameRegistry.registerBlock(blockSpeaker, itemSpeakerBlocks.class, blockSpeaker.getUnlocalizedName().substring(5));
@@ -34,5 +36,6 @@ public class BlockInfo {
         GameRegistry.registerBlock(blockBunnyFurnaceIdle, "BunnyFurnaceIdle");
         GameRegistry.registerBlock(blockBunnyFurnaceActive, "BunnyFurnaceActive");
         GameRegistry.registerBlock(blockAlarmSpeaker, "blockAlarmSpeaker");
+        GameRegistry.registerBlock(blockSpeaky, "blockSpeaky");
     }
 }

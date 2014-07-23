@@ -89,6 +89,13 @@ public class Recipies {
                 'i', ItemInfo.itemBunnyiteIngot, 'p', Items.paper
         });
 
+        GameRegistry.addRecipe(new ItemStack(BlockInfo.blockSpeaky), new Object[]{
+                "IRI",
+                "ILI",
+                "ISI",
+                'I', Items.iron_ingot, 'L', ItemInfo.itemLivingBunny, 'R', Items.redstone
+        });
+
 
         GameRegistry.addRecipe(new ItemStack(ItemInfo.itemBunnyitePlate, 4), new Object[]{"IH", 'H', ItemInfo.itemBunnyiteIngot, 'I', new ItemStack(ItemInfo.itemTwistedHammer, 1, OreDictionary.WILDCARD_VALUE)});
         //ore wildcard allows us to ignore its durability
