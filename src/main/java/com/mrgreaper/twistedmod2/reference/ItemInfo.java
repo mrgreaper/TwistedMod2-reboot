@@ -15,11 +15,11 @@ public class ItemInfo {
     public static Item itemLivingBunny = new itemLivingBunny().setUnlocalizedName("LivingBunny");
     public static Item itemBunnyiteWasher = new twistedItems().setUnlocalizedName("BunnyiteWasher");
     public static Item itemRedballoon = new twistedItems().setUnlocalizedName("RedBalloon");
-    public static Item itemDeathOrb = new twistedItems().setUnlocalizedName("DeathOrb");
+    public static Item itemDeathOrb = new itemDeathOrb().setUnlocalizedName("DeathOrb");
     public static Item itemOrphanLeg = new twistedItems().setUnlocalizedName("OrphanLeg");
     public static Item itemBunnySwordHilt = new twistedItems().setUnlocalizedName("BunnySwordHilt");
     public static Item itemBunnySword = new com.mrgreaper.twistedmod2.items.itemBunnySword(materials.BunnyiteMaterial).setUnlocalizedName("BunnySword");
-    public static Item itemEnergizedBunny = new twistedItems().setUnlocalizedName("EnergizedBunny");
+    public static Item itemEnergizedBunny = new itemElectricBunny(10000, 100, 100).setUnlocalizedName("EnergizedBunny");
     public static Item itemTwistedHammer = new itemTwistedHammer().setUnlocalizedName("TwistedHammer");
     public static Item itemBunnyitePunch = new itemBunnyitePunch().setUnlocalizedName("BunnyitePunch");
     public static Item itemBunnyitePlate = new twistedItems().setUnlocalizedName("BunnyitePlate");
