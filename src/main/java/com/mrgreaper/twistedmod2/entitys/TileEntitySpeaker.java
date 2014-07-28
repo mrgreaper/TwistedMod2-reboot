@@ -88,9 +88,9 @@ public class TileEntitySpeaker extends TileEntity implements SimpleComponent {
 
     public void alarmSound(int i) {
         if (i < numAlarms && i > 0) {
-            soundName = alarms[i];
+            this.soundName = alarms[i];
         } else {
-            soundName = alarms[1];
+            this.soundName = alarms[1];
         }
 
     }
@@ -115,7 +115,9 @@ public class TileEntitySpeaker extends TileEntity implements SimpleComponent {
     public Object[] alarmOn(final Context context, final Arguments args) {
         //boolean soundAlarm = (args.checkBoolean(1));
 
-        shouldStart = true;
+        if (this.worldObj.isRemote) {
+            TwistedMod2.proxy.alarmSound(worldObj.getTileEntity(xCoord, yCoord, zCoord), soundName);
+        }
 
         return new Object[]{true};
     }
@@ -125,7 +127,7 @@ public class TileEntitySpeaker extends TileEntity implements SimpleComponent {
     public Object[] alarmOff(final Context context, final Arguments args) {
         //boolean soundAlarm = (args.checkBoolean(1));
 
-        shouldStop = true;
+        this.shouldStop = true;
 
         return new Object[]{true};
     }

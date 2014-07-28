@@ -17,6 +17,7 @@ public class AlarmHandler2 extends MovingSound {
 
     public AlarmHandler2(TileEntity tile, String Soundname) { //we are taking in the tile entity and the sound name
         super(new ResourceLocation(Reference.MODID + ":" + Soundname)); //setting the location of the sound file
+        LogHelper.info("sound is :" + Soundname);
         this.tileentity = tile; //we tell it that tileentity is the TileEntity we passed it on creating this instance
         this.repeat = true; //we say that we want the sound to repeat
         volume = 2f; //we hard code the volume....i need to actually pass it the volume i just forgot that untill this comment but meh thats easy, will do it later
