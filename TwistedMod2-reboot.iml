@@ -14,11 +14,11 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1187/forgeSrc-1.7.10-10.13.0.1187.jar!/" />
+          <root url="jar://$MODULE_DIR$/build/dirtyArtifacts/forgeSrc-1.7.10-10.13.0.1187.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1187/forgeSrc-1.7.10-10.13.0.1187-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/build/dirtyArtifacts/forgeSrc-1.7.10-10.13.0.1187-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

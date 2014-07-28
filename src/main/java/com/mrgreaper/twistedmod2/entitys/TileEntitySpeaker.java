@@ -1,19 +1,32 @@
 package com.mrgreaper.twistedmod2.entitys;
 
 import com.mrgreaper.twistedmod2.TwistedMod2;
+import com.mrgreaper.twistedmod2.handlers.SoundHandler;
+import cpw.mods.fml.common.Optional;
+import li.cil.oc.api.network.Arguments;
+import li.cil.oc.api.network.Callback;
+import li.cil.oc.api.network.Context;
+import li.cil.oc.api.network.SimpleComponent;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
 /**
  * Created by david on 09/07/2014.
  */
-public class TileEntitySpeaker extends TileEntity {
+@Optional.Interface(iface = "li.cil.oc.api.network.SimpleComponent", modid = "OpenComputers")
+public class TileEntitySpeaker extends TileEntity implements SimpleComponent {
+    @Override
+    public String getComponentName() {
+        return "Alarmer";
+    }
 
     private boolean isPlaying = false; //when the tile entity is created we want to have it not playing
     private boolean shouldStart = false; //the triger we will use to start the sound
     private boolean shouldStop = false;
     private String soundName = "alarm-airraidA"; //setting the default sound name, later a gui will allow me to change it
     private float volume = 2f; //default volume set to 2 that should be 32 block radius, later a gui will help me to change it
+    private String[] alarms = {"Dummy", "alarm-airraidA", "alarm-airraidB", "alarm-genericA", "alarm-genericB", "alarm-genericC", "alarm-genericD", "alarm-genericE", "alarm-genericF", "alarm-scifiA", "alarm-scifiB", "alarm-scifiC", "alarm-klaxonA", "alarm-klaxonB", "alarm-klaxonB"};
+    private int numAlarms = alarms.length;
 
 
     @Override
@@ -24,10 +37,6 @@ public class TileEntitySpeaker extends TileEntity {
             isPlaying = true; //we tell it we are now playing
 
             //TODO need to use a proxy for this....ahhhh crap
-            // AlarmHandler alarm = new AlarmHandler(TileEntitySpeaker.this, soundName,volume,this);
-            // AlarmHandler2 alarm2 = new AlarmHandler2(worldObj.getTileEntity(xCoord, yCoord, zCoord), "alarm-airraidA"); //create a new instance of the alarmhandler2
-
-            //Minecraft.getMinecraft().getSoundHandler().playSound(alarm2); //make some noise
             if (this.worldObj.isRemote) {
                 TwistedMod2.proxy.alarmSound(worldObj.getTileEntity(xCoord, yCoord, zCoord), soundName);
             }
@@ -75,6 +84,50 @@ public class TileEntitySpeaker extends TileEntity {
         nbt.setBoolean("shouldStart", shouldStart);
         nbt.setFloat("vol", volume);
         //we allow isPlaying to reset itself to false...i possibly dont need to save some of the others lol
+    }
+
+    public void alarmSound(int i) {
+        if (i < numAlarms && i > 0) {
+            soundName = alarms[i];
+        } else {
+            soundName = alarms[1];
+        }
+
+    }
+
+    //open computers functions
+    @Callback
+    @Optional.Method(modid = "OpenComputers") // component.Alarmer.setAlarm(1) will set the alarm to alarm 1
+    public Object[] setAlarm(final Context context, final Arguments args) {
+        alarmSound((args.checkInteger(0)));
+        return new Object[]{true};
+    }
+
+    @Callback
+    @Optional.Method(modid = "OpenComputers") // component.Alarmer.testAlarm() will test the alarm
+    public Object[] testAlarm(final Context context, final Arguments args) {
+        SoundHandler.atWorldplace(worldObj, xCoord, yCoord, zCoord, soundName, volume, 1);
+        return new Object[]{true};
+    }
+
+    @Callback
+    @Optional.Method(modid = "OpenComputers") // component.Alarmer.alarmOn()
+    public Object[] alarmOn(final Context context, final Arguments args) {
+        //boolean soundAlarm = (args.checkBoolean(1));
+
+        shouldStart = true;
+
+        return new Object[]{true};
+    }
+
+    @Callback
+    @Optional.Method(modid = "OpenComputers") // component.Alarmer.alarmOff()
+    public Object[] alarmOff(final Context context, final Arguments args) {
+        //boolean soundAlarm = (args.checkBoolean(1));
+
+        shouldStop = true;
+
+        return new Object[]{true};
     }
 
 }

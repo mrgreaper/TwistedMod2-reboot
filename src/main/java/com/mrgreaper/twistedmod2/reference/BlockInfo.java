@@ -5,7 +5,6 @@ import com.mrgreaper.twistedmod2.blocks.blockAlarmSpeaker;
 import com.mrgreaper.twistedmod2.blocks.blockBunnyFurnace;
 import com.mrgreaper.twistedmod2.blocks.blockSpeaky;
 import com.mrgreaper.twistedmod2.blocks.oreBlock;
-import com.mrgreaper.twistedmod2.items.itemSpeakerBlocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -19,7 +18,6 @@ public class BlockInfo {
     public static final int guiIDSecurityId = 2;
     public static final int guiIDBunnyFurnace = 1;
     public static final int guiIDLivingBunny = 0;
-    public static Block blockSpeaker = new com.mrgreaper.twistedmod2.blocks.blockSpeaker().setBlockName("Speaker");
     public static Block oreBunnyite = new oreBlock(Material.rock).setBlockName("oreBunnyite");
     public static Block blockBunnyite = new com.mrgreaper.twistedmod2.blocks.blockBunnyite(Material.iron).setBlockName("blockBunnyite");
     public static Block oreCystalizedBlood = new oreBlock(Material.rock).setBlockName("oreCystalizedBlood");
@@ -29,7 +27,6 @@ public class BlockInfo {
     public static Block blockSpeaky = new blockSpeaky(Material.iron).setBlockName("blcokSpeaky").setCreativeTab(TwistedMod2.TwistedModTab);
 
     public static void init() {
-        GameRegistry.registerBlock(blockSpeaker, itemSpeakerBlocks.class, blockSpeaker.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(oreBunnyite, "oreBunnyite");
         GameRegistry.registerBlock(blockBunnyite, "blockBunnyite");
         GameRegistry.registerBlock(oreCystalizedBlood, "oreCystalizedBlood");
