@@ -12,4 +12,9 @@ public class ServerProxy extends CommonProxy {
     public void alarmSound(TileEntity tileEntity, String soundName) {
         //dont do it! sounds are client side...bad mod ...dont make me get the newspaper!
     }
+
+    @Override
+    public void registerRenderThings() {
+        //dont do it!
+    }
 }

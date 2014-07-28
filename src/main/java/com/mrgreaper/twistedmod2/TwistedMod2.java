@@ -1,6 +1,6 @@
 package com.mrgreaper.twistedmod2;
 
-import com.mrgreaper.twistedmod2.reference.EntityInfo;
+import com.mrgreaper.twistedmod2.entitys.entityHelper;
 import com.mrgreaper.twistedmod2.handlers.*;
 import com.mrgreaper.twistedmod2.proxy.IProxy;
 import com.mrgreaper.twistedmod2.reference.*;
@@ -50,6 +50,8 @@ public class TwistedMod2 {
         BlockInfo.init();//and a block one
         Recipies.init();//and a recipie one
         FluidInfo.init();// and a fluid one
+        entityHelper.mainRegistry(); // handles any mobs i put in
+        proxy.registerRenderThings();//renderer
         try {
             BotHandler.init();
             LogHelper.info("Bots are loaded");

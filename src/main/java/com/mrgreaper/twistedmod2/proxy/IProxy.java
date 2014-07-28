@@ -9,5 +9,8 @@ public interface IProxy {
 
     public abstract void alarmSound(TileEntity tileEntity, String soundName);
 
+    public abstract void registerRenderThings();
+
+
 
 }
