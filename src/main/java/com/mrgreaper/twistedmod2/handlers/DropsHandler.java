@@ -1,5 +1,7 @@
 package com.mrgreaper.twistedmod2.handlers;
 
+import com.mrgreaper.twistedmod2.entitys.entityBunnyMob;
+import com.mrgreaper.twistedmod2.reference.ItemInfo;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.init.Items;
@@ -24,7 +26,9 @@ public class DropsHandler {
 
         if (event.entityLiving instanceof EntityCow) {
             event.entityLiving.entityDropItem(new ItemStack(Items.apple), dropped);
-
+        }
+        if (event.entityLiving instanceof entityBunnyMob) {
+            event.entityLiving.entityDropItem(new ItemStack(ItemInfo.itemDeadBunny), 1);
         }
     }
 }

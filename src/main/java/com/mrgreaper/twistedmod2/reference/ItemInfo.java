@@ -28,6 +28,7 @@ public class ItemInfo {
     public static Item itemBunnyiteSpade = new itemBunnyiteSpade(materials.BunnyiteMaterial).setUnlocalizedName("BunnyiteSpade");
     public static Item itemBloodCrystal = new twistedItems().setUnlocalizedName("TwistedBloodCrystal");
     public static Item itemSecurityId = new itemSecurityId().setUnlocalizedName("SecurityId").setMaxStackSize(1);
+    public static Item itemBacon = new itemBacon(5, 20, false).setUnlocalizedName("itemBacon");
 
 
     public static void init() {
@@ -49,6 +50,6 @@ public class ItemInfo {
         GameRegistry.registerItem(itemBunnyitePickaxe, "BunnyitePickaxe");
         GameRegistry.registerItem(itemBunnyiteAxe, "BunnyiteAxe");
         GameRegistry.registerItem(itemSecurityId, "SecurityId");
-
+        GameRegistry.registerItem(itemBacon, "itemBacon");
     }
 }
