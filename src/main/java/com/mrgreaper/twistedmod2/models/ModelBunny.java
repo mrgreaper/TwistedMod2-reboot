@@ -10,6 +10,7 @@ package com.mrgreaper.twistedmod2.models;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.MathHelper;
 
 public class ModelBunny extends ModelBase {
     //fields
@@ -106,6 +107,14 @@ public class ModelBunny extends ModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)//had to add ,Entity entity
     {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);//had to add ,entity
+        float f6 = (180F / (float) Math.PI);
+        this.Head.rotateAngleX = f4 / (180F / (float) Math.PI);
+        this.Head.rotateAngleY = f3 / (180F / (float) Math.PI);
+        //this.Body.rotateAngleX = ((float)Math.PI / 2F);
+        this.leg1.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
+        this.leg2.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * 1.4F * f1;
+        this.leg3.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * 1.4F * f1;
+        this.leg4.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
     }
 
 }
