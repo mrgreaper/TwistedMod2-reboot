@@ -58,18 +58,6 @@ public class ModelBunny extends ModelBase {
         leg4.setTextureSize(64, 32);
         leg4.mirror = true;
         setRotation(leg4, 0F, 0F, 0F);
-        Head = new ModelRenderer(this, 0, 0);
-        Head.addBox(-0.9333333F, -1F, -2.666667F, 2, 2, 2);
-        Head.setRotationPoint(0F, 20.6F, -1.8F);
-        Head.setTextureSize(64, 32);
-        Head.mirror = true;
-        setRotation(Head, 0F, 0F, 0F);
-        Tail = new ModelRenderer(this, 48, 0);
-        Tail.addBox(-0.3333333F, -0.3333333F, 0F, 1, 1, 1);
-        Tail.setRotationPoint(-0.2666667F, 20.06667F, 2.333333F);
-        Tail.setTextureSize(64, 32);
-        Tail.mirror = true;
-        setRotation(Tail, 0F, 0F, 0F);
         ear1 = new ModelRenderer(this, 7, 26);
         ear1.addBox(-0.4666667F, -3.2F, -0.4F, 1, 3, 1);
         ear1.setRotationPoint(-0.5333334F, 19.93333F, -3.6F);
@@ -82,6 +70,22 @@ public class ModelBunny extends ModelBase {
         ear2.setTextureSize(64, 32);
         ear2.mirror = true;
         setRotation(ear2, 0F, 0F, 0F);
+        Head = new ModelRenderer(this, 0, 0);
+        Head.addBox(-0.9333333F, -1F, -2.666667F, 2, 2, 2);
+        //Head.addBox(-0.4666667F, -3.2F, -0.4F, 1, 3, 1);
+        Head.setRotationPoint(0F, 20.6F, -1.8F);
+        Head.setTextureSize(64, 32);
+        Head.mirror = true;
+        Head.addChild(ear1);
+        Head.addChild(ear2);
+        setRotation(Head, 0F, 0F, 0F);
+        Tail = new ModelRenderer(this, 48, 0);
+        Tail.addBox(-0.3333333F, -0.3333333F, 0F, 1, 1, 1);
+        Tail.setRotationPoint(-0.2666667F, 20.06667F, 2.333333F);
+        Tail.setTextureSize(64, 32);
+        Tail.mirror = true;
+        setRotation(Tail, 0F, 0F, 0F);
+
     }
 
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
