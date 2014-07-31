@@ -3,8 +3,6 @@ package com.mrgreaper.twistedmod2.handlers;
 import com.mrgreaper.twistedmod2.entitys.entityBunnyMob;
 import com.mrgreaper.twistedmod2.reference.ItemInfo;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
@@ -18,17 +16,22 @@ public class DropsHandler {
 
     public static Random random;
     public static int dropped;
+    public static int dropped2;
 
     @SubscribeEvent
     public void onEntityDrop(LivingDropsEvent event) {
         random = new Random();
         dropped = random.nextInt(2) + 1;
+        dropped2 = random.nextInt(3) + 1;
 
-        if (event.entityLiving instanceof EntityCow) {
-            event.entityLiving.entityDropItem(new ItemStack(Items.apple), dropped);
-        }
+        // if (event.entityLiving instanceof EntityCow) {
+        //     event.entityLiving.entityDropItem(new ItemStack(Items.apple), dropped);
+        // }
         if (event.entityLiving instanceof entityBunnyMob) {
             event.entityLiving.entityDropItem(new ItemStack(ItemInfo.itemDeadBunny), 1);
+        }
+        if (event.entityLiving instanceof entityBunnyMob) {
+            event.entityLiving.entityDropItem(new ItemStack(ItemInfo.itemBaconUncooked), dropped2);
         }
     }
 }

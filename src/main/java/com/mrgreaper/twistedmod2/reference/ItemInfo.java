@@ -29,6 +29,7 @@ public class ItemInfo {
     public static Item itemBloodCrystal = new twistedItems().setUnlocalizedName("TwistedBloodCrystal");
     public static Item itemSecurityId = new itemSecurityId().setUnlocalizedName("SecurityId").setMaxStackSize(1);
     public static Item itemBacon = new itemBacon(5, 20, false).setUnlocalizedName("itemBacon");
+    public static Item itemBaconUncooked = new itemBaconUncooked().setUnlocalizedName("itemUncookedBacon");
 
 
     public static void init() {
@@ -51,5 +52,6 @@ public class ItemInfo {
         GameRegistry.registerItem(itemBunnyiteAxe, "BunnyiteAxe");
         GameRegistry.registerItem(itemSecurityId, "SecurityId");
         GameRegistry.registerItem(itemBacon, "itemBacon");
+        GameRegistry.registerItem(itemBaconUncooked, "itemUncookedBacon");
     }
 }
