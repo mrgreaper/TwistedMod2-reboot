@@ -1,5 +1,6 @@
 package com.mrgreaper.twistedmod2.reference;
 
+import com.mrgreaper.twistedmod2.TwistedMod2;
 import com.mrgreaper.twistedmod2.handlers.materials;
 import com.mrgreaper.twistedmod2.items.*;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -29,7 +30,7 @@ public class ItemInfo {
     public static Item itemBloodCrystal = new twistedItems().setUnlocalizedName("TwistedBloodCrystal");
     public static Item itemSecurityId = new itemSecurityId().setUnlocalizedName("SecurityId").setMaxStackSize(1);
     public static Item itemBacon = new itemBacon(5, 20, false).setUnlocalizedName("itemBacon");
-    public static Item itemBaconUncooked = new itemBaconUncooked().setUnlocalizedName("itemUncookedBacon");
+    public static Item itemBaconUncooked = new itemBaconUncooked().setUnlocalizedName("itemUncookedBacon").setCreativeTab(TwistedMod2.TwistedModTab);
 
 
     public static void init() {
