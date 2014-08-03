@@ -2,6 +2,7 @@ package com.mrgreaper.twistedmod2.items;
 
 import com.mrgreaper.twistedmod2.reference.ItemInfo;
 import li.cil.oc.api.Network;
+import li.cil.oc.api.driver.Container;
 import li.cil.oc.api.driver.Slot;
 import li.cil.oc.api.network.Environment;
 import li.cil.oc.api.network.Visibility;
@@ -24,8 +25,11 @@ public class OCdriverCardSpeaky extends DriverItem {
     }
 
     @Override
-    public ManagedEnvironment createEnviroment(ItemStack stack, TileEntity container) {
-        return new Environment(container);
+    public ManagedEnvironment createEnviroment(ItemStack stack, Container container) {
+        if (container instanceof TileEntity) {
+            return new Environment((TileEntity) container);
+        }
+        return null;
     }
 
     public class Enviroment extends ManagedEnvironment {
