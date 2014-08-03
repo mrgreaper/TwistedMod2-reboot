@@ -72,6 +72,7 @@ public class TwistedMod2 {
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         MinecraftForge.EVENT_BUS.register(new DropsHandler());//register our drop handler example
         EntityInfo.init();
+        OCdriverBootUp.init();
 
         GameRegistry.registerFuelHandler(new TwistedFuel());
 

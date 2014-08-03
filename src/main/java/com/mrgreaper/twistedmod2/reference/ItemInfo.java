@@ -31,6 +31,7 @@ public class ItemInfo {
     public static Item itemSecurityId = new itemSecurityId().setUnlocalizedName("SecurityId").setMaxStackSize(1);
     public static Item itemBacon = new itemBacon(5, 20, false).setUnlocalizedName("itemBacon");
     public static Item itemBaconUncooked = new itemBaconUncooked().setUnlocalizedName("itemUncookedBacon").setCreativeTab(TwistedMod2.TwistedModTab);
+    public static Item OCcardSpeaky = new OCcardSpeaky().setUnlocalizedName("cardSpeaky").setCreativeTab(TwistedMod2.TwistedModTab);
 
 
     public static void init() {
@@ -54,5 +55,6 @@ public class ItemInfo {
         GameRegistry.registerItem(itemSecurityId, "SecurityId");
         GameRegistry.registerItem(itemBacon, "itemBacon");
         GameRegistry.registerItem(itemBaconUncooked, "itemUncookedBacon");
+        GameRegistry.registerItem(OCcardSpeaky, "cardSpeaky");
     }
 }
