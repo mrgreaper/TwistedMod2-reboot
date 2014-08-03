@@ -37,7 +37,6 @@
    "evilvoice-BeCareful":  {"category": "master","sounds": [{"name": "evilvoice-BeCareful","stream": false}]},
    "evilvoice-BloodBunny":  {"category": "master","sounds": [{"name": "evilvoice-BloodBunny","stream": false}]},
    "evilvoice-BringToLife":  {"category": "master","sounds": [{"name": "evilvoice-BringToLife","stream": false}]},
-   "evilvoice-BunnyFoot":  {"category": "master","sounds": [{"name": "evilvoice-BunnyFoot","stream": false}]},
    "evilvoice-BurnIt":  {"category": "master","sounds": [{"name": "evilvoice-BurnIt","stream": false}]},
    "evilvoice-Delicous":  {"category": "master","sounds": [{"name": "evilvoice-Delicous","stream": false}]},
    "evilvoice-DoNotPityOrphan":  {"category": "master","sounds": [{"name": "evilvoice-DoNotPityOrphan","stream": false}]},

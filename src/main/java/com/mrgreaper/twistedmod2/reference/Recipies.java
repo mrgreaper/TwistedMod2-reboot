@@ -96,12 +96,25 @@ public class Recipies {
                 'I', Items.iron_ingot, 'L', ItemInfo.itemLivingBunny, 'R', Items.redstone
         });
 
+        GameRegistry.addRecipe(new ItemStack(BlockInfo.blockSpeaky), new Object[]{
+                "IRI",
+                "ILI",
+                "IRI",
+                'I', Items.gold_nugget, 'L', ItemInfo.itemLivingBunny, 'R', Items.redstone
+        });
+
         if (ConfigHandler.nonBunnySpeechSynth) {
             GameRegistry.addRecipe(new ItemStack(BlockInfo.blockSpeaky), new Object[]{
                     "IRI",
                     "ILI",
                     "IRI",
                     'I', Items.iron_ingot, 'L', Blocks.diamond_block, 'R', Items.redstone
+            });
+            GameRegistry.addRecipe(new ItemStack(ItemInfo.OCcardSpeaky), new Object[]{
+                    "IRI",
+                    "ILI",
+                    "IRI",
+                    'I', Items.gold_nugget, 'L', Items.diamond, 'R', Items.redstone
             });
         }
 

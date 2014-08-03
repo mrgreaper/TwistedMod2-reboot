@@ -11,6 +11,8 @@ tile.BunnyFurnaceActive.name=Bunny Furnace
 tile.orphantears.name=Orphan Tears
 tile.bunnyblood.name=Bunny Blood
 tile.blockAlarmSpeaker.name=Alarmer
+tile.blockSpeaky.name=Speech Synth(Enslaved Bunny)
+tile.blockAiUnit.name=Ai
 
 item.DeadBunny.name=Dead Bunny
 item.BunnyiteIngot.name=Bunnyite Ingot
@@ -32,3 +34,6 @@ item.EnergizedBunny.name=Statically Charged Bunny
 item.bucketOfOrphanTears.name=Bucket of orphan Tears
 item.bucketOfBunnyBlood.name=Bucket of Bunny Blood
 item.SecurityId.name=Security Id
+item.itemUncookedBacon.name=raw bacon
+item.itemBacon.name=Tasty Bacon
+item.cardSpeaky.name=SpeechSynth card(Enslaved compressed bunny)

@@ -23,10 +23,10 @@ public class ConfigHandler {
     public static boolean nonBunnySpeechSynth = false;
     public static int bunnyiteOreMinY = 10;
     public static int bunnyiteOreMaxY = 40;
-    public static int bunnyiteOreChance = 25;//TODO make these rarer, set high for testing
+    public static int bunnyiteOreChance = 20;//TODO make these rarer, set high for testing
     public static int bunnyBloodCrystalizedMinY = 10;
     public static int bunnyBloodCrystalizedMaxY = 40;
-    public static int bunnyBloodCrystalizedChance = 25;
+    public static int bunnyBloodCrystalizedChance = 5;
     public static int speechSynthMaxRange = 512;
 
 
