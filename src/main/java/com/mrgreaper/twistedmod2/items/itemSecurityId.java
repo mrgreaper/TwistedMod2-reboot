@@ -3,7 +3,6 @@ package com.mrgreaper.twistedmod2.items;
 import com.mrgreaper.twistedmod2.TwistedMod2;
 import com.mrgreaper.twistedmod2.handlers.ReaperHelper;
 import com.mrgreaper.twistedmod2.reference.BlockInfo;
-import com.mrgreaper.twistedmod2.utility.LogHelper;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -25,7 +24,7 @@ public class itemSecurityId extends twistedItems {
 
     @Override //ok so when the item is created we make a nbt tag but not as i know it
     public void onCreated(ItemStack itemStack, World world, EntityPlayer player) {
-        LogHelper.info("item created");
+        //LogHelper.info("item created");
         makeNBT(itemStack, player); //lets make it a function so we can call it if theres not a tag:)
     }
 
@@ -48,11 +47,11 @@ public class itemSecurityId extends twistedItems {
 
     @Override
     public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
-        LogHelper.info("security id right clicked");
+        //LogHelper.info("security id right clicked");
         if (!player.isSneaking()) {
             if (itemStack.stackTagCompound != null) {
             } else {
-                LogHelper.info("no tag compound lets make one");
+                //LogHelper.info("no tag compound lets make one");
                 makeNBT(itemStack, player);
             }
         } else {
@@ -61,7 +60,7 @@ public class itemSecurityId extends twistedItems {
 
 
             } else {
-                LogHelper.info("no tag compound lets make one");
+                //LogHelper.info("no tag compound lets make one");
                 makeNBT(itemStack, player);
             }
         }

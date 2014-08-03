@@ -20,12 +20,14 @@ public class ConfigHandler {
     public static boolean easyMode = true;
     public static boolean leathSmelt = true;
     public static boolean grassCraft = true;
+    public static boolean nonBunnySpeechSynth = false;
     public static int bunnyiteOreMinY = 10;
     public static int bunnyiteOreMaxY = 40;
     public static int bunnyiteOreChance = 25;//TODO make these rarer, set high for testing
     public static int bunnyBloodCrystalizedMinY = 10;
     public static int bunnyBloodCrystalizedMaxY = 40;
     public static int bunnyBloodCrystalizedChance = 25;
+    public static int speechSynthMaxRange = 512;
 
 
     public static void init(File configFile) {
@@ -52,6 +54,8 @@ public class ConfigHandler {
         bunnyBloodCrystalizedMinY = configuration.getInt("Crystalized BB: min height", configuration.CATEGORY_GENERAL, bunnyBloodCrystalizedMinY, 1, 64, "the lowest height of Crystalized bunny blood can be found");
         bunnyBloodCrystalizedMaxY = configuration.getInt("Crystalized BB: max height", configuration.CATEGORY_GENERAL, bunnyBloodCrystalizedMaxY, 1, 64, "the highest height of Crystalized bunny blood can be found");
         bunnyBloodCrystalizedChance = configuration.getInt("Crystalized BB: chance to spawn", configuration.CATEGORY_GENERAL, bunnyBloodCrystalizedChance, 1, 64, "the chance of Crystalized bunny blood spawning in world");
+        nonBunnySpeechSynth = configuration.getBoolean("Speech Synth: non bunny recipie", configuration.CATEGORY_GENERAL, nonBunnySpeechSynth, "some people dont like the bunny aspect and only use my mods for the speech synth, thats ok heres that option");
+        speechSynthMaxRange = configuration.getInt("Speech Synth: max range", configuration.CATEGORY_GENERAL, speechSynthMaxRange, 1, 2024, "Max range that the speech synth can be heard at(to prevent griefing)");
 
 
         if (configuration.hasChanged()) {

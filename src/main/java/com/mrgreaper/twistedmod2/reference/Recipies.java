@@ -51,7 +51,7 @@ public class Recipies {
                 'C', Blocks.cobblestone}); //ram the the bunny on with a bit of cobblestone
         //its wierd people say im evil..... wierd that
         //dont worry you will hear the click when the orphan hilt enters fig b of the bunny and clips into place
-        //or a scream....proberly a scream....you heartless person you!
+        //or a scream....probably a scream....you heartless person you!
         //that poor cobblestone
 
         GameRegistry.addRecipe(new ItemStack(ItemInfo.itemDeathOrb), new Object[]{
@@ -92,8 +92,24 @@ public class Recipies {
         GameRegistry.addRecipe(new ItemStack(BlockInfo.blockSpeaky), new Object[]{
                 "IRI",
                 "ILI",
-                "ISI",
+                "IRI",
                 'I', Items.iron_ingot, 'L', ItemInfo.itemLivingBunny, 'R', Items.redstone
+        });
+
+        if (ConfigHandler.nonBunnySpeechSynth) {
+            GameRegistry.addRecipe(new ItemStack(BlockInfo.blockSpeaky), new Object[]{
+                    "IRI",
+                    "ILI",
+                    "IRI",
+                    'I', Items.iron_ingot, 'L', Blocks.diamond_block, 'R', Items.redstone
+            });
+        }
+
+        GameRegistry.addRecipe(new ItemStack(ItemInfo.itemDeathOrb), new Object[]{
+                " F ",
+                "FBF",
+                " F ",
+                'F', Items.flint, 'B', Items.bucket
         });
 
 
@@ -110,6 +126,7 @@ public class Recipies {
         }
         GameRegistry.addSmelting(ItemInfo.itemOrphanLeg, new ItemStack(ItemInfo.itemBunnySwordHilt), 0.1f);//TODO needs new texture
         GameRegistry.addSmelting(BlockInfo.oreBunnyite, new ItemStack(ItemInfo.itemBunnyiteIngot), 0);
+        GameRegistry.addSmelting(ItemInfo.itemBaconUncooked, new ItemStack(ItemInfo.itemBacon), 0);
 
         if (ConfigHandler.leathSmelt) {
             GameRegistry.addSmelting(Items.rotten_flesh, new ItemStack(Items.leather), 0.1f);

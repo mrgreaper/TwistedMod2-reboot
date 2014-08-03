@@ -1,5 +1,6 @@
 package com.mrgreaper.twistedmod2.client.render;
 
+
 import com.mrgreaper.twistedmod2.entitys.entityDeathOrb;
 import com.mrgreaper.twistedmod2.models.ModelDeathorb;
 import com.mrgreaper.twistedmod2.reference.Reference;
@@ -20,9 +21,11 @@ public class renderDeathorb extends Render {
         shadowSize = 0.5f;
     }
 
-    private ResourceLocation modelTexture = new ResourceLocation(Reference.MODID + ":models/metal.png");
+    private ResourceLocation modelTexture = new ResourceLocation(Reference.MODID + ":models/metal1.png");
 
     public void renderDeathorb(entityDeathOrb deathOrb, double x, double y, double z, float yaw, float partialTickTime) {
+        GL11.glPushMatrix();
+        GL11.glTranslatef((float) x, (float) y, (float) z);
         bindEntityTexture(deathOrb);
         model.renderWavefront();
         GL11.glPopMatrix();

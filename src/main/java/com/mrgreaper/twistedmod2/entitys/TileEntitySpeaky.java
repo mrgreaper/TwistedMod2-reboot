@@ -1,5 +1,6 @@
 package com.mrgreaper.twistedmod2.entitys;
 
+import com.mrgreaper.twistedmod2.handlers.ConfigHandler;
 import com.mrgreaper.twistedmod2.handlers.SpeechThreaded;
 import cpw.mods.fml.common.Optional;
 import li.cil.oc.api.network.Arguments;
@@ -34,6 +35,9 @@ public class TileEntitySpeaky extends TileEntity implements SimpleComponent {
         int pitchShift = (args.checkInteger(3));
         String sentence = (args.checkString(4));
         int range = (args.checkInteger(5));
+        if (range > ConfigHandler.speechSynthMaxRange) {
+            range = ConfigHandler.speechSynthMaxRange;
+        }
         AxisAlignedBB axisalignedbb = AxisAlignedBB.getBoundingBox((double) this.xCoord, (double) this.yCoord, (double) this.zCoord, (double) (this.xCoord + 1), (double) (this.yCoord + 1), (double) (this.zCoord + 1)).expand(range, range, range);
         axisalignedbb.maxY = (double) this.worldObj.getHeight();
         List list = this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, axisalignedbb);
