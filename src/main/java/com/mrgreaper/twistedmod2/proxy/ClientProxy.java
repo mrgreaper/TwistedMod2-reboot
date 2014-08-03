@@ -1,7 +1,9 @@
 package com.mrgreaper.twistedmod2.proxy;
 
+import com.mrgreaper.twistedmod2.client.render.renderDeathorb;
 import com.mrgreaper.twistedmod2.client.render.renderEntityBunny;
 import com.mrgreaper.twistedmod2.entitys.entityBunnyMob;
+import com.mrgreaper.twistedmod2.entitys.entityDeathOrb;
 import com.mrgreaper.twistedmod2.handlers.AlarmHandler2;
 import com.mrgreaper.twistedmod2.models.ModelBunny;
 import com.mrgreaper.twistedmod2.utility.LogHelper;
@@ -22,6 +24,7 @@ public class ClientProxy extends CommonProxy {
 
     public void registerRenderThings() {
         RenderingRegistry.registerEntityRenderingHandler(entityBunnyMob.class, new renderEntityBunny(new ModelBunny(), 0));
+        RenderingRegistry.registerEntityRenderingHandler(entityDeathOrb.class, new renderDeathorb());
 
     }
 
