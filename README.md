@@ -11,3 +11,11 @@ but to sum up my interpretation of it:
 2)you must credit me if you have used my code (tbh thats just polite lol, and hell just a thanks in mods thread is ok)(doubt anyone would use my code though...im still rather new)
 3)you cant hold me liable if my code eats your cat, threatens your dog and release bunnys into your kitchen
 
+NOTE TO Anyland Devs, feel free to use any of the following sounds:
+any of the evil voice ones 
+growl
+laugh
+laughb
+laughc
+any that begin bunny
+(cant give permission for the alarms as they were royalty free but i dont own the licenses on them to give permission, the ones listed though are my own work)
